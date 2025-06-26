@@ -43,7 +43,7 @@ void MenuPrincipal::mostrar(){
                 a.cargarCompras();
                 break;
             case 4:
-
+                inf.Listardatos();
                 ;
                 break;
             case 5:
