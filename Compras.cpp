@@ -20,11 +20,11 @@ Compras::Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Impor
  }
 
 // Getters
-const char* Compras::getIdProveedor() {
+ std::string Compras::getIdProveedor() {
     return idProveedor;
 }
 
-const char* Compras::getIdCompra() {
+ std::string Compras::getIdCompra() {
     return idCompra;
 }
 
@@ -41,12 +41,12 @@ bool Compras::getActivo(){
 }
 
 // Setters
-void Compras::setIdProveedor(const char* id) {
-    strcpy(idProveedor, id);
+void Compras::setIdProveedor( std::string id) {
+    strcpy(idProveedor, id.c_str());
 }
 
-void Compras::setIdCompra(const char* id) {
-    strcpy(idCompra, id);
+void Compras::setIdCompra( std::string id) {
+    strcpy(idCompra, id.c_str());
 }
 
 void Compras::setFecha(const Fecha& nuevaFecha) {
@@ -71,10 +71,12 @@ void Compras::mostrar() {
     cout << "Importe: $" << importe << endl;
     cout << "Activo: ";
         if (activo) {
-            cout << "Si";
+            cout << "compra habilitada en el sistema";
         } else {
-            cout << "No";
+            cout << "compra inhabilitada en el sistema";
         }
         cout << endl;
     cout << "-----------------------------" << endl;
 }
+
+

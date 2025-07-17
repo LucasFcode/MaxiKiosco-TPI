@@ -76,3 +76,137 @@ int ComprasArchivo::getCantidadRegistros() {
     fclose(archivo);
     return cant;
 }
+
+/*  ///--> revisar es lo mismo que proveedores
+int ComprasArchivo::buscarProveedor(std::string nombreProveedor){
+FILE *archivo;
+ Compras compra;
+ archivo= fopen (_nombreArchivo.c_str() , "rb");
+ if (archivo==nullptr){
+
+    cout << "hubo un error al ingresar a buscarProveedor/ProveedorArchivo" << endl;
+ }
+ int pos=0;
+ while (fread (&compra,sizeof (Compras), 1, archivo)==1){
+
+    if (compra.getNombre()==nombreProveedor){
+        fclose (archivo);
+        return pos;
+
+    }
+    else{
+            cout << "este Nombre NO EXISTE en el sistema" << endl;
+    return pos=-11;
+    }
+
+    pos++;
+ }
+ fclose (ProvArchivo);
+ return -1;
+}*/
+
+
+
+int ComprasArchivo::buscarFechadecompra(int fechadia, int fechaMes, int fechaAnio){
+FILE *archivo;
+ Compras Com;
+ archivo= fopen (_nombreArchivo.c_str() , "rb");
+ bool encontrado=false;
+ if (archivo==nullptr){
+    return -1;
+ }
+
+
+ int posicion=0;
+ while (fread (&Com,sizeof (Compras), 1, archivo)==1){
+
+    if (Com.getFecha().getDia()==fechadia && Com.getFecha().getMes()==fechaMes && Com.getFecha().getAnio()==fechaAnio){
+
+
+        fclose (archivo);
+        encontrado=true;
+
+
+        return posicion;
+    }
+
+    posicion++;
+ }
+ fclose (archivo);
+
+ if(encontrado==false){
+ cout << "Esta fecha NO EXISTE en el sistema" << endl;
+ return -11;
+ }
+
+
+}
+
+
+
+int ComprasArchivo::buscaridCompra(std::string idCompra){
+ FILE *pFile;
+ Compras Com;
+ bool encontrado=false;
+ pFile= fopen (_nombreArchivo.c_str() , "rb");
+ if (pFile==nullptr){
+
+    return -1;
+ }
+ int posicion=0;
+ while (fread (&Com,sizeof (Compras), 1, pFile)==1){
+
+    if (Com.getIdCompra()==idCompra){
+        fclose (pFile);
+        encontrado=true;
+        return posicion;
+
+    }
+
+    posicion++;
+ }
+ fclose (pFile);
+
+ if(encontrado==false){
+    cout << "este ID NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+ }
+
+ }
+
+
+
+ float ComprasArchivo::buscarImportecompra(float importeCompra){
+ FILE *pFile;
+ Compras Com;
+ bool encontrado=false;
+ pFile= fopen (_nombreArchivo.c_str() , "rb");
+ if (pFile==nullptr){
+
+    return -1;
+ }
+ int posicion=0;
+ while (fread (&Com,sizeof (Compras), 1, pFile)==1){
+
+    if (Com.getImporte()==importeCompra){
+        fclose (pFile);
+        encontrado=true;
+        return posicion;
+
+    }
+
+    posicion++;
+ }
+ fclose (pFile);
+
+ if(encontrado==false){
+    cout << "este ID NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+ }
+ }
+
+
+
+
+
+

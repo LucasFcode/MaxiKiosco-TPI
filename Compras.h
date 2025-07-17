@@ -13,22 +13,23 @@ private:
 public:
     // Constructor por defecto
     Compras();
-    Compras(string IDcompra,string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
+    Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
 
     // Getters
-    const char* getIdProveedor();
-    const char* getIdCompra();
+     std::string getIdProveedor();
+     std::string getIdCompra();
     Fecha getFecha();
     float getImporte();
     bool getActivo();
 
     // Setters
-    void setIdProveedor(const char* id);
-    void setIdCompra(const char* id);
+    void setIdProveedor( std::string id);
+    void setIdCompra( std::string id);
     void setFecha(const Fecha& fecha);
     void setImporte(float importe);
     void setActivo(bool estado);
 
 
     void mostrar();
+
 };

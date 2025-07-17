@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Compras.h"
+#include "Fecha.h"
 
 class ComprasArchivo {
 private:
@@ -16,4 +17,9 @@ public:
     bool eliminar(Compras maxi, int pos);
     int listarTodos();
     int getCantidadRegistros();
+    //int buscarProveedor(std::string nombreProveedor); --> revisar es lo mismo que proveedores
+    int  buscarFechadecompra(int fechadia, int fechaMes, int fechaAnio);
+    int buscaridCompra(std::string idCompra);
+    float buscarImportecompra(float importeCompra);
+
 };
