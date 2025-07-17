@@ -8,6 +8,8 @@ using namespace std;
 #include "ProveedorArchivo.h"
 #include "ComprasArchivo.h"
 #include "Fecha.h"
+#include "Compras.h"
+#include "ComprasArchivo.h"
 
 void Usuario_maestro::cargarProducto (){
 
@@ -32,22 +34,24 @@ cout <<"Ingrese tipo de producto"<< endl;
 getline(cin, tipoProducto);
 caso3=prodCarga.settipoProducto(tipoProducto);
 
+
+
 cout << "Ingrese precio Unitario"<< endl;
 while (!(cin >> precioUnitario)) {
-        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cout << "Entrada no valida. Por favor ingresa un numero: "<<endl;
         cin.clear();
         cin.ignore();
     }
 caso4=prodCarga.setprecioUnitario(precioUnitario);
 
+
 cout<<"Ingrese stock"<< endl;
 while (!(cin >> stock)) {
-        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cout << "Entrada no valida. Por favor ingresa un numero: "<<endl;
         cin.clear();
         cin.ignore();
     }
 caso5=prodCarga.setstock(stock);
-
 
 
 if (caso1 && caso2 && caso3 && caso4 && caso5){
@@ -280,7 +284,7 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
 void Usuario_maestro::cargarProveedor(){
     Proveedores proveedor;
     ProveedorArchivo ArchivodeProveedores;
-char CUIT_str[30], Nombre_str[30], Telefono_str[30], Email_str[30], Direccion_str[30];
+char CUIT_str[30], Nombre_str[30], Telefono_str[30], Email_str[30],Direccion_str[30];
 char idProv_str[30];
 bool Estado=true;
 
@@ -315,10 +319,10 @@ proveedor= Proveedores (idProv_str, CUIT_str, Nombre_str, Telefono_str, Email_st
 
 if (ArchivodeProveedores.Guardar(proveedor)){       /// guardo los datos en Proveedores.dat
 
-    cout<< "Se guardo correctamente!";
+    cout<< "Se guardo correctamente!" << endl;
 }
 else{
-    cout<<"Hubo un error al realizar la carga";
+    cout<<"Hubo un error al realizar la carga" << endl;
 
 }
 
@@ -327,7 +331,7 @@ else{
 void Usuario_maestro::mostrarProveedoresActivos(Proveedores reg){
 bool registro=reg.getEstado();
 
-if(registro==0){
+if(registro==1){
 cout<<"**************************************************"<<endl;
 cout << "ID Proveedor: " <<reg.getidProveedor() << endl;
 cout << "CUIT: " <<reg.getCUIT() << endl;
@@ -339,7 +343,7 @@ cout<<"**************************************************"<<endl;
 }
 else {
     cout<<"No hay registros activos para mostrar..."<<endl;
-    cout<<"esto es en mostrar prov activos"<<endl;
+
 }
 
 }
@@ -454,7 +458,7 @@ cout<<"Ingrese ID del proveedor a modificar :"<<endl;
    case 2:
 
          int pos2;
-cout<<"Ingrese ID Producto a modificar :"<<endl;
+cout<<"Ingrese ID del proveedor a modificar :"<<endl;
     cin.ignore();
     getline(cin, CUIT);
     pos2=reg.buscarProveedor(CUIT);
@@ -481,7 +485,7 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
 
    case 3:
         int pos3;
-cout<<"Ingrese Nombre a modificar :"<<endl;
+cout<<"Ingrese ID del proveedor a modificar :"<<endl;
     cin.ignore();
     getline(cin, nombreProveedor);
     pos3=reg.buscarProveedor(nombreProveedor);
@@ -509,7 +513,7 @@ cout<<"Ingrese Nombre a modificar :"<<endl;
 
    case 4:
         int pos4;
-cout<<"Ingrese telefono a modificar :"<<endl;
+cout<<"Ingrese ID del proveedor a modificar :"<<endl;
     cin.ignore();
     getline(cin, Tel);
     pos4=reg.buscarProveedor(Tel);
@@ -536,7 +540,7 @@ cout<<"Ingrese telefono a modificar :"<<endl;
 
    case 5:
          int pos5;
-cout<<"Ingrese Email a modificar :"<<endl;
+cout<<"Ingrese ID del proveedor a modificar :"<<endl;
     cin.ignore();
     getline(cin, e_mail);
     pos5=reg.buscarProveedor(e_mail);
@@ -563,7 +567,7 @@ cout<<"Ingrese Email a modificar :"<<endl;
 
     case 6:
          int pos6;
-cout<<"Ingrese Direccion a modificar :"<<endl;
+cout<<"Ingrese ID del proveedor a modificar :"<<endl;
     cin.ignore();
     getline(cin, Direccion);
     pos6=reg.buscarProveedor(Direccion);
@@ -638,3 +642,216 @@ else{
 }
 
 }
+
+void Usuario_maestro::mostrarcomprasActivas(Compras reg){
+bool registro=reg.getActivo();
+
+if(registro==1){
+cout<<"**************************************************"<<endl;
+cout << "ID de Compra: " <<reg.getIdCompra() << endl;
+cout << "ID de Proveedor: " <<reg.getIdProveedor() << endl;
+cout << "Fecha de la compra: " << reg.getFecha().toString() << endl;
+cout << "Importe: " << reg.getImporte() << endl;
+cout<<"**************************************************"<<endl;
+}
+else {
+    cout<<"No hay registros activos para mostrar..."<<endl;
+}
+
+}
+
+
+void Usuario_maestro::eliminarCompra (){
+Usuario_maestro cargas;
+    ComprasArchivo registro;
+    Compras setter;
+
+    string idCompra;
+
+
+ int posicion1;
+cout<<"Ingrese ID de compra a eliminar :"<<endl;
+    cin.ignore();
+    getline(cin, idCompra);
+    posicion1=registro.buscaridCompra(idCompra);
+
+    if (posicion1>=0){
+        setter.setActivo(false);
+        if (registro.guardar(setter)){
+            cout<<"Registro eliminado correctamente..."<<endl;
+            system("pause");
+        }
+        else{
+            cout<<"Hubo un error al eliminar el registro..."<<endl;
+            system("pause");
+        }
+    }
+}
+
+void Usuario_maestro::modificarCompra (){
+
+    ComprasArchivo reg;
+
+   string idCompra, idProv;
+    float Importe;
+    Fecha fec;
+
+
+int Opcion;
+
+ do{
+  cout<<"---------------------------------------------------"<<endl;
+        cout << "      Que registro desea modificar     "<<endl;
+        cout << "1. ID de Compra"<<endl;
+        cout << "2. id de Proveedor"<<endl;
+        cout << "3. Importe"<<endl;
+        cout << "4. Fecha de ingreso"<<endl;
+        cout << "0. Salir" << endl;
+        cout << "Elija una opcion:  ";
+  cin >> Opcion;
+
+      switch(Opcion){
+   case 1:
+        int Pos;
+cout<<"Ingrese ID de la compra a modificar :"<<endl;
+    cin.ignore();
+    cin >> idCompra;
+    Pos=reg.buscaridCompra(idCompra);
+
+    if (Pos>=0){
+            Compras setter= reg.leerUno(Pos);
+            cout<<"Ingrese el nuevo ID :"<<endl;
+            cin >> idCompra;
+            setter.setIdCompra(idCompra);
+
+        if (reg.guardar(setter)){
+            cout<<"Registro modificado correctamente..."<<endl;
+            system("pause");
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro..."<<endl;
+        system("pause");
+        }
+
+}
+
+    break;
+
+   case 2:
+
+         int pos2;
+cout<<"Ingrese ID del proveedor a modificar :"<<endl;
+    cin.ignore();
+    getline(cin, idProv);
+    pos2=reg.buscaridCompra(idProv);
+
+    if (pos2>=0){
+            Compras setter= reg.leerUno(pos2);
+            cout<<"Ingrese el id del proveedor :"<<endl;
+            getline(cin, idProv);
+            setter.setIdProveedor(idProv);
+
+        if (reg.guardar(setter)){
+            cout<<"Registro modificado correctamente"<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro"<<endl;
+        }
+system("pause");
+}
+
+    break;
+
+   case 3:
+        int pos3;
+cout<<"Ingrese importe a modificar :"<<endl;
+    cin.ignore();
+    cin >> Importe;
+    pos3=reg.buscarImportecompra(Importe);
+
+    if (pos3>=0){
+            Compras setter= reg.leerUno(pos3);
+            cout<<"Ingrese el nuevo Importe :"<<endl;
+            cin >> Importe;
+            setter.setImporte(Importe);
+
+        if (reg.guardar(setter)){
+            cout<<"Registro modificado correctamente"<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro"<<endl;
+        }
+}
+system("pause");
+
+    break;
+
+   case 4:
+        int pos4;
+        int dia, mes,anio;
+cout<<"Ingrese fecha a modificar :"<<endl;
+    cin.ignore();
+    cout << "Dia: " << endl;
+    cin >> dia;
+    cout << "Mes: " << endl;
+    cin >> mes;
+    cout << "Año: " << endl;
+    cin >> anio;
+    pos4=reg.buscarFechadecompra(dia,mes,anio);
+
+    if (pos4>=0){
+            Compras setter= reg.leerUno(pos4);
+            cout<<"Ingrese la nueva fecha :"<<endl;
+
+    fec.Cargar();
+
+            setter.setFecha(fec);
+
+        if (reg.guardar(setter)){
+            cout<<"Registro modificado correctamente"<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro"<<endl;
+        }
+        system("pause");
+    }
+
+    break;
+
+
+    default:
+        cout << "Elija una opcion valida:" << endl;
+
+system("pause");
+}
+
+}while (Opcion != 0);
+}
+
+void Usuario_maestro::listarcompras(){
+Usuario_maestro mostrarEnLista;
+ ComprasArchivo Archicom;
+ Compras registro;
+
+ int cantidadRegistros;
+
+  cantidadRegistros= Archicom.getCantidadRegistros();
+if (cantidadRegistros>0){
+    for ( int i=0; i< cantidadRegistros; i++){
+
+    registro=Archicom.leerUno(i);
+
+mostrarEnLista.mostrarcomprasActivas(registro);
+
+  }
+
+}
+ else {
+        cout<<"No hay registros para mostrar"<<endl;
+    }
+system("pause");
+}
+
+
+
+

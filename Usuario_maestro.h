@@ -1,6 +1,7 @@
 #pragma once
 #include "Productos.h"
 #include "Proveedores.h"
+#include "Compras.h"
 
 class Usuario_maestro {
 
@@ -22,7 +23,10 @@ public:
 
     ///Compras
     void cargarCompras();
-
+    void mostrarcomprasActivas(Compras reg);
+    void eliminarCompra ();
+    void modificarCompra ();
+    void listarcompras();
 
 
 };
