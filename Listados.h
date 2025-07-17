@@ -2,28 +2,28 @@
 
 class Listados{
 
-
-
 public:
 
 ///Listado Proveedores
-void Orden_ProveedoresID();
-void Orden_ProveedoresNombre();
+void Orden_ProveedoresID(); ///busqueda por ID
+void Orden_ProveedoresNombre();  ///busqueda por nombre
 
 ///Listado Productos
-void Ordenid_Productos();
-void OrdenNombre_Productos();
+void Ordenid_Productos(); ///busqueda por ID Producto
+void OrdenNombre_Productos(); ///busqueda por nombre producto
+void OrdenCantidad_Productos(); ///mostrar orden de stock de menor a mayor
 
 ///Listado Compras
-void OrdenProv_Compras();
-void Fecha_Compras();
-void OrdenCantidad_Compras();
-void OrdenImporte_Compras();
+void OrdenProv_Compras(); ///busqueda por proveedor --> este no
+
+void Fecha_Compras(); ///busqueda por fecha
+void Fecha_ComprasOrden(); ///busqueda por orden de fechas
+void OrdenImporte_Compras(); ///mostrar orden de compras de mayor a menor
 
 void MENUlistados();
-void Menu1();
-void Menu2();
-void Menu3();
+void Menu1Proveedores();
+void Menu2Productos();
+void Menu3Compras();
 
 };
 
