@@ -17,6 +17,7 @@ public:
     int getCantidadRegistros();
     int listarTodos();
     int buscarProveedor(std::string IDproveedor);
+    int buscarProveedornombre(std::string nombreProveedor);
 
     void setregActivo(bool estado);
     bool getregActivo();

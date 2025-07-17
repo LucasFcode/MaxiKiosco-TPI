@@ -129,9 +129,17 @@ cout << "Nombre: " << getNombre() << endl;
 cout << "Telefono: " << getTelefono() << endl;
 cout << "Email: " << getemail() << endl;
 cout << "Direccion: " << getDireccion() << endl;
+if(getEstado()){
+cout << "-------------------------------" << endl;
+cout << "Proveedor habilitado en el sistema" << endl;
+cout << "-------------------------------" << endl;
 }
 else{
-    cout << "El proveedor no esta registrado en el sistema." << endl;
+        cout << "-------------------------------" << endl;
+    cout << "Proveedor ihabilitado en el sistema o no existe" << endl;
+    cout << "-------------------------------" << endl;
+}
+
 }
 
 }

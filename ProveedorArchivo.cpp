@@ -98,7 +98,7 @@ int ProveedorArchivo::listarTodos() {
     Proveedores maxi;
     while (fread(&maxi, sizeof(Proveedores), 1, archivo)) {
         if (maxi.getEstado()) {
-           cout << "======================================" << endl;
+           cout << "======================================" << endl<<endl;
             maxi.Mostrar();
             TotalActivos++;
         }
@@ -124,16 +124,18 @@ return cantRegistros;
 int ProveedorArchivo::buscarProveedor(std::string IDproveedor){
  FILE *ProvArchivo;
  Proveedores Prov;
+ bool encontrado=false;
  ProvArchivo= fopen (_nombreArchivo.c_str() , "rb");
  if (ProvArchivo==nullptr){
 
-    return -1;
+    cout << "hubo un error al ingresar a buscarProveedor/ProveedorArchivo" << endl;
  }
  int pos=0;
  while (fread (&Prov,sizeof (Proveedores), 1, ProvArchivo)==1){
 
     if (Prov.getidProveedor()==IDproveedor){
         fclose (ProvArchivo);
+        encontrado=true;
         return pos;
 
     }
@@ -141,10 +143,44 @@ int ProveedorArchivo::buscarProveedor(std::string IDproveedor){
     pos++;
  }
  fclose (ProvArchivo);
- return -1;
 
+ if(encontrado==false){
+    cout << "este ID NO EXISTE en el sistema" << endl;
+    return pos=-11;
+ }
 
  }
+
+ int ProveedorArchivo::buscarProveedornombre(std::string nombreProveedor){
+ FILE *ProvArchivo;
+ Proveedores Prov;
+ bool encontrado=false;
+ ProvArchivo= fopen (_nombreArchivo.c_str() , "rb");
+ if (ProvArchivo==nullptr){
+
+    cout << "hubo un error al ingresar a buscarProveedor/ProveedorArchivo" << endl;
+ }
+ int pos=0;
+ while (fread (&Prov,sizeof (Proveedores), 1, ProvArchivo)==1){
+
+    if (Prov.getNombre()==nombreProveedor){
+        fclose (ProvArchivo);
+        encontrado=true;
+        return pos;
+
+    }
+
+    pos++;
+ }
+ fclose (ProvArchivo);
+
+ if(encontrado==false){
+    cout << "este Nombre NO EXISTE en el sistema" << endl;
+    return pos=-11;
+ }
+
+ }
+
 
  bool ProveedorArchivo::leerMuchos(Proveedores reg[], int cantidad){
  FILE *pFile;
