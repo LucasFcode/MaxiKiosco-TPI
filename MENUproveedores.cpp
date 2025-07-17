@@ -12,6 +12,7 @@ void MENUproveedores::Mostrar(){
 Usuario_maestro Cargaprov;
 int Opcion;
  do{
+        system("cls");
   cout<<"---------------------------------------------------"<<endl;
         cout << "      Menu Proveedores     "<<endl;
         cout << "1. Cargar nuevo Proveedor"<<endl;
@@ -24,19 +25,27 @@ int Opcion;
 
       switch(Opcion){
    case 1:
+       system("cls");
           Cargaprov.cargarProveedor();
+          system("pause");
     break;
 
    case 2:
+       system("cls");
        Cargaprov.listarProveedores();
+       system("pause");
     break;
 
    case 3:
+       system("cls");
        Cargaprov.eliminarProveedores();
+       system("pause");
     break;
 
    case 4:
+       system("cls");
        Cargaprov.modificarProveedores();
+       system("pause");
     break;
 
     default:
@@ -45,13 +54,6 @@ int Opcion;
    }
 
 }while (Opcion != 0);
-
-
-
-
-
-
-
 
 
 
