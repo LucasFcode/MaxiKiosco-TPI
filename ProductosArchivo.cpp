@@ -119,6 +119,7 @@ fclose(pFile);
 int ProductosArchivo::buscarProducto(std::string IDProducto){
  FILE *pFile;
  Productos prod;
+ bool encontrado=false;
  pFile= fopen (_nombreArchivo.c_str() , "rb");
  if (pFile==nullptr){
 
@@ -129,6 +130,7 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
 
     if (prod.getIDProducto()==IDProducto){
         fclose (pFile);
+        encontrado=true;
         return posicion;
 
     }
@@ -136,11 +138,83 @@ int ProductosArchivo::buscarProducto(std::string IDProducto){
     posicion++;
  }
  fclose (pFile);
- return -1;
 
+ if(encontrado==false){
+    cout << "este ID NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+ }
 
  }
+ ///******************************************************************
+ int ProductosArchivo::buscarNombreProducto(std::string Name){
+ FILE *pFile;
+ Productos prod;
+ bool encontrado=false;
+ pFile= fopen (_nombreArchivo.c_str() , "rb");
+ if (pFile==nullptr){
+
+    return -1;
+ }
+ int posicion=0;
+ while (fread (&prod,sizeof (Productos), 1, pFile)==1){
+
+    if (prod.getnombreProducto()==Name){
+        fclose (pFile);
+        encontrado=true;
+        return posicion;
+
+    }
+    else{
+            cout << "este nombre NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+    }
+
+
+    posicion++;
+ }
+ fclose (pFile);
+
+ if(encontrado==false){
+    cout << "este nombre NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+ }
+ }
  ///*************************************************************************************************************************
+
+int ProductosArchivo::buscarStock(std::string Producto){
+FILE *pFile;
+ Productos prod;
+ bool encontrado=false;
+ pFile= fopen (_nombreArchivo.c_str() , "rb");
+ if (pFile==nullptr){
+
+    return -1;
+ }
+ int posicion=0;
+ while (fread (&prod,sizeof (Productos), 1, pFile)==1){
+
+    if (prod.getIDProducto()==Producto){
+        fclose (pFile);
+        encontrado=true;
+        return posicion;
+
+    }
+    else{
+            cout << "este nombre NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+    }
+
+
+    posicion++;
+ }
+ fclose (pFile);
+
+ if(encontrado==false){
+    cout << "este nombre NO EXISTE en el sistema" << endl;
+    return posicion=-11;
+ }
+}
+
  void ProductosArchivo::listarProductos(){
 
  ProductosArchivo pProductos;
@@ -178,6 +252,7 @@ cout << "Nombre Producto : " << registro.getnombreProducto() << endl;
 cout << "Tipo Producto : " << registro.gettipoProducto() << endl;
 cout << "Precio Unitario $: " << registro.getprecioUnitario() << endl;
 cout << "Stock : " << registro.getstock()<< endl;
+cout << "este Producto se encuentra habilitado en el sistema" << endl;
 cout<<"**************************************************"<<endl;
 }
 else {

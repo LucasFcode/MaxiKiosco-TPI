@@ -18,6 +18,8 @@ class ProductosArchivo {
     bool Eliminar (std::string IDProducto);
     int cantidadTotalProductos ();
     int buscarProducto(std::string IDProducto);
+    int buscarNombreProducto(std::string Name);
+    int buscarStock(std::string Producto);
     Productos leer(int pos);
     bool leerMuchos(Productos reg[], int cantidad);
     void mostrarProductosActivos(Productos registro);

@@ -100,5 +100,27 @@ bool Productos::getEstado (){
 return _estado;
 }
 
+void Productos::mostrarProd(){
 
+if(_estado){
+
+cout << "ID del Producto: " << getIDProducto() << endl;
+cout << "Nombre del producto: " << getnombreProducto() << endl;
+cout << "Tipo de producto: " << gettipoProducto() << endl;
+cout << "Precio Unitario: " << getprecioUnitario() << endl;
+cout << "Stock: " << getstock() << endl;
+if(getEstado()){
+cout << "-------------------------------" << endl;
+cout << "Producto habilitado en el sistema" << endl;
+cout << "-------------------------------" << endl;
+}
+else{
+        cout << "-------------------------------" << endl;
+    cout << "Producto ihabilitado en el sistema o no existe" << endl;
+    cout << "-------------------------------" << endl;
+}
+
+}
+
+}
 

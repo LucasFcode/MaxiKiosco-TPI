@@ -31,7 +31,7 @@ public:
 
 
     void cargar();
-    void mostrar();
+    void mostrarProd();
     void eliminar();
 };
 
