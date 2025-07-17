@@ -5,6 +5,8 @@ using namespace std;
 #include "informes.h"
 #include "Consultas.h"
 #include "Usuario_maestro.h"
+#include "MENUproveedores.h"
+#include "MENUcompras.h"
 
 
 
@@ -13,6 +15,8 @@ void MenuPrincipal::mostrar(){
 
     int opcion;
     MENUProducto cargas;
+    MENUproveedores carga2;
+    MENUcompras Carga3;
     informes inf;
     Consultas con;
     Usuario_maestro a;
@@ -22,7 +26,7 @@ void MenuPrincipal::mostrar(){
         cout << "\n--- Menu ---" << endl;
         cout << "1. Productos" << endl;
         cout << "2. Proveedor" << endl;
-        cout << "3. Cargar Compra" << endl;
+        cout << "3. Compras" << endl;
         cout << "4. Listados" << endl;
         cout << "5. Consultas" << endl;
         cout << "6. Informes" << endl;
@@ -36,11 +40,11 @@ void MenuPrincipal::mostrar(){
 
                 break;
             case 2:
-                a.cargarProveedor();
+                carga2.Mostrar();
                 ;
                 break;
             case 3:
-                a.cargarCompras();
+                Carga3.Mos();
                 break;
             case 4:
                 inf.Listardatos();
@@ -53,7 +57,7 @@ void MenuPrincipal::mostrar(){
                 inf.mostrarMenu();
                 ;
                 break;
-            case 7:
+            case 0:
                 cout << "Saliendo..." << endl;
                 break;
             default:
