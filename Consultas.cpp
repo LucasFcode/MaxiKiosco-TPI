@@ -3,34 +3,49 @@ using namespace std;
 #include "Consultas.h"
 #include "ProductosArchivo.h"
 #include "ProveedorArchivo.h"
+#include "ComprasArchivo.h"
+
+
 
 Consultas::Consultas(){
 };
 
-
+float precioUnitario;
 void Consultas::menuconsultas(){
 
     int opcion;
 
     do {
         cout << "\n--- Menu Consultas ---" << endl;
-        cout << "1. Mostrar Proveedores activos" << endl;
-        cout << "2. Mostrar Productos activos" << endl;
-        cout << "--------------" << endl;
+        cout << "1. Productos con precio menor a " << endl;
+        cout << "2. Stock Productos menores a " << endl;
+        cout << "3. Proveedores " << endl;
+        cout << "4. Buscar compras entre fechas " << endl;
+        cout << "5. Ver compras de un producto " << endl;
+        cout << "6. Ver compras de un proveedor " << endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opci¢n: ";
         cin >> opcion;
 
         switch (opcion) {
             case 1:
-               mostrarProveedoresActivos();
+               mostrarProductosprecios();
 
                 break;
             case 2:
-               mostrarProductosActivos();
-                ;
+               mostrarstockProductos();
+
                 break;
             case 3:
+                ;
+                break;
+            case 4:
+                ;
+                break;
+            case 5:
+                ;
+                break;
+            case 6:
                 ;
                 break;
 
@@ -41,6 +56,69 @@ void Consultas::menuconsultas(){
 
     }
 
+void Consultas::mostrarProductosprecios(){
+ProductosArchivo dat;
+int cantidad = dat.cantidadTotalProductos();
+
+Productos *vecProductos;
+
+vecProductos = new Productos [cantidad];
+
+dat.leerMuchos(vecProductos, cantidad);
+
+cout << "Ingrese precio Unitario"<< endl;
+while (!(cin >> precioUnitario)) {
+        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cin.clear();
+        cin.ignore();
+    }
+
+for (int o=0; o<cantidad; o++){
+
+        if(vecProductos[o].getprecioUnitario()<precioUnitario){
+
+    cout<< "*************************************************"<<endl;
+    cout<<" Productos menores al precio unitario ingresado :"<<vecProductos[o].getnombreProducto()<<endl;
+
+
+}
+}
+delete [] vecProductos;
+}
+
+void Consultas::mostrarstockProductos(){
+int stockMenor;
+ProductosArchivo dat;
+int cantidad = dat.cantidadTotalProductos();
+
+Productos *vecProductos;
+
+vecProductos = new Productos [cantidad];
+
+dat.leerMuchos(vecProductos, cantidad);
+
+cout<<"Ingrese stock"<< endl;
+while (!(cin >> stockMenor)) {
+        cout << "Entrada no v lida. Por favor ingresa un n£mero: "<<endl;
+        cin.clear();
+        cin.ignore();
+    }
+cout<<" Productos menores al numero de stock ingresado :"<<endl;
+for (int o=0; o<cantidad; o++){
+
+        if(vecProductos[o].getstock()<stockMenor){
+
+
+    cout<<vecProductos[o].getnombreProducto()<<endl<<endl;
+
+
+}
+}
+
+ cout<< "*************************************************"<<endl;
+delete [] vecProductos;
+}
+/*
 void Consultas::mostrarProveedoresActivos(){
 ProveedorArchivo dat;
 int cantidad = dat.getCantidadRegistros();
@@ -85,4 +163,4 @@ for (int o=0; o<cantidad; o++){
 delete [] vecProductos;
 }
 
-
+*/
