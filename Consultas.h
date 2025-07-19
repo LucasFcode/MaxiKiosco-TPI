@@ -10,4 +10,5 @@ public :
     void mostrarProductosprecios();
     void mostrarstockProductos();
     void mostrarComprasdelmes();
+    void mostrarComprasaunProveedor();
 };

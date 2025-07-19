@@ -20,8 +20,9 @@ void Consultas::menuconsultas(){
         cout << "1. Productos con precio menor a " << endl;
         cout << "2. Stock Productos menores a " << endl;
         cout << "3. Buscar compras en el mes " << endl;
-        cout << "4. Ver compras de un producto " << endl;
-        cout << "5. Ver compras de un proveedor " << endl;
+        cout << "4. Ver compras a un proveedor " << endl;
+        cout << "5. Proveedores activos " << endl;
+        cout << "6. Productos activos " << endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opci¢n: ";
         cin >> opcion;
@@ -36,16 +37,16 @@ void Consultas::menuconsultas(){
 
                 break;
             case 3:
-                ;
+                mostrarComprasdelmes();
                 break;
             case 4:
-                ;
+                mostrarComprasaunProveedor();
                 break;
             case 5:
-                ;
+                mostrarProveedoresActivos();
                 break;
             case 6:
-                ;
+                mostrarProductosActivos();
                 break;
 
             default:
@@ -151,7 +152,44 @@ for (int o=0; o<cantidad; o++){
  cout<< "*************************************************"<<endl;
 delete [] vecCompras;
 }
-/*
+
+void Consultas::mostrarComprasaunProveedor(){
+string prov;
+ComprasArchivo dat;
+int cantidad = dat.getCantidadRegistros();
+
+Compras *vecCompras;
+
+vecCompras = new Compras [cantidad];
+
+dat.leerMuchos(vecCompras, cantidad);
+
+cout<<"Ingrese proveedor"<< endl;
+
+ cin.ignore();
+ getline(cin, prov);
+
+
+for (int o=0; o<cantidad; o++){
+
+        if(vecCompras[o].getIdProveedor()==prov){
+
+
+    cout<<vecCompras[o].getIdCompra()<<endl<<endl;
+
+    cout<<vecCompras[o].getImporte()<<endl<<endl;
+
+
+}
+}
+
+ cout<< "*************************************************"<<endl;
+delete [] vecCompras;
+}
+
+
+
+
 void Consultas::mostrarProveedoresActivos(){
 ProveedorArchivo dat;
 int cantidad = dat.getCantidadRegistros();
@@ -161,15 +199,16 @@ Proveedores *vecProveedores;
 vecProveedores = new Proveedores [cantidad];
 
 dat.leerMuchos(vecProveedores, cantidad);
-
+ cout<< "=================================="<<endl;
 for (int o=0; o<cantidad; o++){
 if(vecProveedores[o].getEstado()==true){
-    cout<< "=================================="<<endl;
-    cout<<" PROVEEDOR ACTIVO :   "<<vecProveedores[o].getNombre()<<"||   TELEFONO    "<<vecProveedores[o].getTelefono()<<endl;
+
+    cout<<" PROVEEDOR ACTIVO :   "<<vecProveedores[o].getNombre()<<endl;
 
 }
 
 }
+delete [] vecProveedores;
 }
 ///****************************************************************************************************************************
 
@@ -182,13 +221,14 @@ Productos *vecProductos;
 vecProductos = new Productos [cantidad];
 
 dat.leerMuchos(vecProductos, cantidad);
+cout<< "=================================="<<endl;
 
 for (int o=0; o<cantidad; o++){
 
         if(vecProductos[o].getEstado()==true){
 
-    cout<< "=================================="<<endl;
-    cout<<" PRODUCTO ACTIVO :"<<vecProductos[o].getnombreProducto()<<" STOCK "<<vecProductos[o].getstock()<<endl;
+
+    cout<<" PRODUCTO ACTIVO :"<<vecProductos[o].getnombreProducto()<<endl;
 
 
 }
@@ -196,4 +236,3 @@ for (int o=0; o<cantidad; o++){
 delete [] vecProductos;
 }
 
-*/
