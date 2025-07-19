@@ -42,8 +42,14 @@
 		<Unit filename="Consultas.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Listados.cpp" />
+		<Unit filename="Listados.h" />
 		<Unit filename="MENUProducto.cpp" />
 		<Unit filename="MENUProducto.h" />
+		<Unit filename="MENUcompras.cpp" />
+		<Unit filename="MENUcompras.h" />
+		<Unit filename="MENUproveedores.cpp" />
+		<Unit filename="MENUproveedores.h" />
 		<Unit filename="MenuPrincipal.cpp" />
 		<Unit filename="MenuPrincipal.h" />
 		<Unit filename="Productos.cpp" />

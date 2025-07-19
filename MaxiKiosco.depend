@@ -257,3 +257,26 @@
 	"Compras.h"
 	"ComprasArchivo.h"
 
+1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\menucompras.cpp
+	<iostream>
+	"MENUcompras.h"
+	"Usuario_maestro.h"
+
+1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\menuproveedores.cpp
+	<iostream>
+	"MENUProveedores.h"
+	"Usuario_maestro.h"
+
+1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\listados.cpp
+	<iostream>
+	"Listados.h"
+	"Proveedores.h"
+	"ProveedorArchivo.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"Compras.h"
+	"ComprasArchivo.h"
+	"Fecha.h"
+
+1752852173 d:\progra2\git\otra\maxikiosco-tpi\listados.h
+
