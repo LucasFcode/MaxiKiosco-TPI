@@ -1,12 +1,12 @@
 #include <iostream>
 #include "Listados.h"
 #include "Proveedores.h"
-#include "ProveedorArchivo.h"
 #include "Productos.h"
 #include "ProductosArchivo.h"
 #include "Compras.h"
 #include "ComprasArchivo.h"
 #include "Fecha.h"
+#include "ProveedorArchivo.h"
 using namespace std;
 
 
@@ -213,7 +213,10 @@ cout << endl;
 for(int i=0 ; i<Totalreg; i++){
 if(Usu.getEstado()){
 
-        Pos=Archi.buscarProveedornombre(Nombre);
+
+
+
+  Pos=Archi.buscarProveedornombre(Nombre);
         if(Pos>0){
           Archi.leerUno(Pos).Mostrar();
         }
