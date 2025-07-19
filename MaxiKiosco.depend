@@ -153,7 +153,7 @@
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\comprastotal.h
 	<string>
 
-1752880883 source:d:\progra2\git\otra\maxikiosco-tpi\consultas.cpp
+1752893944 source:d:\progra2\git\otra\maxikiosco-tpi\consultas.cpp
 	<iostream>
 	"Consultas.h"
 	"ProductosArchivo.h"
@@ -267,7 +267,7 @@
 	"MENUProveedores.h"
 	"Usuario_maestro.h"
 
-1752890969 source:d:\progra2\git\otra\maxikiosco-tpi\listados.cpp
+1752892709 source:d:\progra2\git\otra\maxikiosco-tpi\listados.cpp
 	<iostream>
 	"Listados.h"
 	"Proveedores.h"

@@ -19,10 +19,9 @@ void Consultas::menuconsultas(){
         cout << "\n--- Menu Consultas ---" << endl;
         cout << "1. Productos con precio menor a " << endl;
         cout << "2. Stock Productos menores a " << endl;
-        cout << "3. Proveedores " << endl;
-        cout << "4. Buscar compras entre fechas " << endl;
-        cout << "5. Ver compras de un producto " << endl;
-        cout << "6. Ver compras de un proveedor " << endl;
+        cout << "3. Buscar compras en el mes " << endl;
+        cout << "4. Ver compras de un producto " << endl;
+        cout << "5. Ver compras de un proveedor " << endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opci¢n: ";
         cin >> opcion;
@@ -117,6 +116,40 @@ for (int o=0; o<cantidad; o++){
 
  cout<< "*************************************************"<<endl;
 delete [] vecProductos;
+}
+
+
+
+void Consultas::mostrarComprasdelmes(){
+int mes;
+ComprasArchivo dat;
+int cantidad = dat.getCantidadRegistros();
+
+Compras *vecCompras;
+
+vecCompras = new Compras [cantidad];
+
+dat.leerMuchos(vecCompras, cantidad);
+
+cout<<"Ingrese numero de mes"<< endl;
+
+cin >> mes;
+
+cout<<" Compras realizadas del mes :"<< mes <<endl;
+
+for (int o=0; o<cantidad; o++){
+
+        if(vecCompras[o].getFecha().getMes()==mes){
+
+
+    cout<<vecCompras[o].getIdCompra()<<endl<<endl;
+
+
+}
+}
+
+ cout<< "*************************************************"<<endl;
+delete [] vecCompras;
 }
 /*
 void Consultas::mostrarProveedoresActivos(){

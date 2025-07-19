@@ -206,7 +206,20 @@ int ComprasArchivo::buscaridCompra(std::string idCompra){
  }
 
 
+bool ComprasArchivo::leerMuchos(Compras reg[], int cantidad){
+ FILE *pFile;
 
+ pFile= fopen (_nombreArchivo.c_str(), "rb");
+
+ if (pFile == nullptr){
+
+    return reg;
+ }
+
+fread(reg, sizeof(Compras), cantidad, pFile);
+fclose(pFile);
+ return true;
+}
 
 
 

@@ -21,5 +21,6 @@ public:
     int  buscarFechadecompra(int fechadia, int fechaMes, int fechaAnio);
     int buscaridCompra(std::string idCompra);
     float buscarImportecompra(float importeCompra);
+    bool leerMuchos(Compras reg[], int cantidad);
 
 };
