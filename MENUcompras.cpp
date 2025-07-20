@@ -25,16 +25,16 @@ int Opcion;
     break;
 
    case 2:
-       Cargacompra.listarcompras();
+///       Cargacompra.listarcompras();
 
     break;
 
    case 3:
-       Cargacompra.eliminarCompra();
+     ///  Cargacompra.eliminarCompra();
     break;
 
    case 4:
-       Cargacompra.modificarCompra();
+     ///  Cargacompra.modificarCompra();
     break;
 
     default:
