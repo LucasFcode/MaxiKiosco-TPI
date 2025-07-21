@@ -16,9 +16,8 @@ int Opcion;
   cout<<"---------------------------------------------------"<<endl;
         cout << "      Menu Proveedores     "<<endl;
         cout << "1. Cargar nuevo Proveedor"<<endl;
-        cout << "2. Listado de Proveedores activos"<<endl;
-        cout << "3. Eliminar Proveedor"<<endl;
-        cout << "4. Modificar datos del Proveedor"<<endl;
+        cout << "2. Eliminar Proveedor"<<endl;
+        cout << "3. Modificar datos del Proveedor"<<endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opcion:  ";
   cin >> Opcion;
@@ -30,19 +29,19 @@ int Opcion;
           system("pause");
     break;
 
-   case 2:
+   /*case 2:
        system("cls");
        Cargaprov.listarProveedores();
        system("pause");
-    break;
+    break;*/
 
-   case 3:
+   case 2:
        system("cls");
        Cargaprov.eliminarProveedores();
        system("pause");
     break;
 
-   case 4:
+   case 3:
        system("cls");
        Cargaprov.modificarProveedores();
        system("pause");

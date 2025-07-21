@@ -5,13 +5,15 @@
 class Proveedores{
 
 private:
-    char _idProveedor[30];
-    char _CUIT[30];
-    char _Nombre[30];
-    char _Telefono[30];
-    char _email[30];
-    char _direccion[30];
+    std::string _idProveedor;
+    std::string _CUIT;
+    std::string _Nombre;
+    std::string _Telefono;
+    std::string _email;
+    std::string _direccion;
     bool _estado;
+
+
 
 
 public:
@@ -26,17 +28,16 @@ std::string getemail();
 std::string getDireccion();
 bool getEstado();
 bool setidProveedor( std::string Proveedor);
-void setCUIT(std::string CUIT);
-void setNombre(std::string Nombre);
-void setTelefono(std::string Telefono);
-void setEmail(std::string Email);
-void setDireccion(std::string Direccion);
+bool setCUIT(std::string CUIT);
+bool setNombre(std::string Nombre);
+bool setTelefono(std::string Telefono);
+bool setEmail(std::string Email);
+bool setDireccion(std::string Direccion);
 void setEstado(bool estado);
 
 
 void Cargar();
 void Mostrar();
-void Opcmenu();
 
 };
 

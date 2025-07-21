@@ -280,3 +280,158 @@
 
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\listados.h
 
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\compras.cpp
+	<cstring>
+	<iostream>
+	"Compras.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\compras.h
+	"Fecha.h"
+	<iostream>
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\fecha.h
+
+1753062508 source:c:\users\lauty\documents\github\maxikiosco-tpi\comprasarchivo.cpp
+	<iostream>
+	<cstdio>
+	"ComprasArchivo.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\comprasarchivo.h
+	<string>
+	"Compras.h"
+	"Fecha.h"
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\comprastotal.cpp
+	<iostream>
+	"Comprastotal.h"
+	<cstring>
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\comprastotal.h
+	<string>
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\consultas.cpp
+	<iostream>
+	"Consultas.h"
+	"ProductosArchivo.h"
+	"ProveedorArchivo.h"
+	"ComprasArchivo.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\consultas.h
+	"Productos.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\productos.h
+	<string>
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\productosarchivo.h
+	"Productos.h"
+	<string>
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\proveedorarchivo.h
+	"Proveedores.h"
+
+1753065004 c:\users\lauty\documents\github\maxikiosco-tpi\proveedores.h
+	<string>
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\fecha.cpp
+	<iostream>
+	"Fecha.h"
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\informes.cpp
+	<iostream>
+	<cstring>
+	"informes.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"Compras.h"
+	"ComprasArchivo.h"
+	"ProveedorArchivo.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\informes.h
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\listados.cpp
+	<iostream>
+	"Listados.h"
+	"Proveedores.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"Compras.h"
+	"ComprasArchivo.h"
+	"Fecha.h"
+	"ProveedorArchivo.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\listados.h
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\menucompras.cpp
+	<iostream>
+	"MENUcompras.h"
+	"Usuario_maestro.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\menucompras.h
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\usuario_maestro.h
+	"Productos.h"
+	"Proveedores.h"
+	"Compras.h"
+
+1753062357 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuprincipal.cpp
+	<iostream>
+	"MenuPrincipal.h"
+	"MENUProducto.h"
+	"informes.h"
+	"Consultas.h"
+	"Usuario_maestro.h"
+	"MENUproveedores.h"
+	"MENUcompras.h"
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\menuprincipal.h
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\menuproducto.h
+
+1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\menuproveedores.h
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuproducto.cpp
+	<iostream>
+	"MENUProducto.h"
+	"Usuario_maestro.h"
+	"ProductosArchivo.h"
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuproveedores.cpp
+	<iostream>
+	"MENUProveedores.h"
+	"Usuario_maestro.h"
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\productos.cpp
+	<cstring>
+	"Productos.h"
+	<iostream>
+
+1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\productosarchivo.cpp
+	"ProductosArchivo.h"
+	"Productos.h"
+	<iostream>
+
+1753066372 source:c:\users\lauty\documents\github\maxikiosco-tpi\proveedorarchivo.cpp
+	<iostream>
+	"ProveedorArchivo.h"
+
+1753065915 source:c:\users\lauty\documents\github\maxikiosco-tpi\proveedores.cpp
+	<iostream>
+	"Proveedores.h"
+
+1753060209 source:c:\users\lauty\documents\github\maxikiosco-tpi\main.cpp
+	<iostream>
+	"MenuPrincipal.h"
+
+1753065722 source:c:\users\lauty\documents\github\maxikiosco-tpi\usuario_maestro.cpp
+	<iostream>
+	<string>
+	<cstring>
+	"Usuario_maestro.h"
+	"Productos.h"
+	"ProductosArchivo.h"
+	"ProveedorArchivo.h"
+	"ComprasArchivo.h"
+	"Fecha.h"
+	"Compras.h"
+	"ComprasArchivo.h"
+
