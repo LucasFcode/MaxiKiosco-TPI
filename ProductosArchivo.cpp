@@ -251,7 +251,7 @@ cout << "ID Producto : " <<registro.getIDProducto() << endl;
 cout << "Nombre Producto : " << registro.getnombreProducto() << endl;
 cout << "Tipo Producto : " << registro.gettipoProducto() << endl;
 cout << "Precio Unitario $: " << registro.getprecioUnitario() << endl;
-cout << "Stock : " << registro.getstock()<< endl;
+///cout << "Stock : " << registro.getstock()<< endl;
 cout << "este Producto se encuentra habilitado en el sistema" << endl;
 cout<<"**************************************************"<<endl;
 }

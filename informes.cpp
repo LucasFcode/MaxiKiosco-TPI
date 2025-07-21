@@ -27,14 +27,14 @@ void informes::mostrarMenu() {
         cout << "Elija una opcion: ";
         cin >> opcion;
         switch (opcion) {
-            case 1: productosConMasStock(); break;
-            case 2: productosConMenosStock(); break;
+            case 1: ///productosConMasStock(); break;
+            case 2: ///productosConMenosStock(); break;
             case 3: comprasPorMes(); break;
-            case 4: {
-                int umbral= ingreseUmbral();
-                productosStockBajo(umbral);
-                break;
-            }
+            case 4:  ///{
+                     ///int umbral= ingreseUmbral();
+                     ///productosStockBajo(umbral);
+                     ///break;
+                     ///}
             case 5: cantidadProductosActivosInactivos(); break;
             case 6: totalGastadoPorMes(); break;
             case 7: proveedorMasCompras(); break;
@@ -49,7 +49,7 @@ void informes::mostrarMenu() {
     } while (opcion != 0);
 }
 
-
+/*
 void informes::productosConMasStock() { /// opcion 1
     ProductosArchivo arch;
     Productos prod;
@@ -90,7 +90,7 @@ void informes::productosConMenosStock() { /// opcion 2
     }
     cout << "Producto con menos stock: " << nombreMin << " y tiene: " << minStock << " unidades" << endl;
 }
-
+*/
 void informes::comprasPorMes() { /// opcion 3
     ComprasArchivo arch;
     int cant = arch.getCantidadRegistros();
@@ -170,6 +170,8 @@ int informes::ingreseUmbral(){ // opcion 4
     return umbral;
 
 }
+
+/*
 void informes::productosStockBajo(int umbral) { // opcion 4
 
     ProductosArchivo arch;
@@ -183,7 +185,7 @@ void informes::productosStockBajo(int umbral) { // opcion 4
             arch.mostrarProductosActivos(prod);
         }
     }
-}
+}*/
 
 void informes::cantidadProductosActivosInactivos() { // opcion 5
     ProductosArchivo arch;

@@ -90,7 +90,7 @@ void Listados::listarProductosAgrupados() {
     }
 
     // Mostrar productos agrupados por tipo
-    cout << "\n--- Productos agrupados por tipo ---\n";
+    cout << "--- Productos agrupados por tipo ---";
 
     for (int i = 0; i < cantTipos; i++) {
         cout << "Tipo: " << tipos[i] << endl;

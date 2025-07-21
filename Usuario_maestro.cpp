@@ -582,7 +582,7 @@ void Usuario_maestro::cargarCompras(){
 
 string idProd, idProv,nombreProd, nombreProvee;
 Fecha Hfecha;
-int estado, cantidad1, cantidad2, cantidadCompra;
+int estado, cantidad1, cantidad2, cantidadCompra, stock;
 float Importe, Importetotal;
 
 ProductosArchivo cant;
@@ -662,8 +662,8 @@ cout<<"El importe total es "<<Importetotal<<endl;
 
 cout<<"Ingresar OK=1, NO=0"<< endl;
 cin>>estado;
-
-compra= Compras (nombreProd, nombreProvee, Hfecha, Importetotal, estado);
+stock=cantidadCompra;
+compra= Compras (nombreProd, nombreProvee, Hfecha, Importetotal,stock, estado);
 
 
 if (Arch.guardar(compra)){
