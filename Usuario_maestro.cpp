@@ -580,7 +580,7 @@ cout<<"Ingrese ID del proveedor a modificar :"<<endl;
 void Usuario_maestro::cargarCompras(){
 
 
-string idProd, idProv;
+string idProd, idProv,nombreProd, nombreProvee;
 Fecha Hfecha;
 int estado, cantidad1, cantidad2, cantidadCompra;
 float Importe, Importetotal;
@@ -607,7 +607,7 @@ for (int o=0; o<cantidad1; o++){
 
 
     cout<<"El producto es  : "<<vecProductos[o].getnombreProducto()<<endl;
-
+    nombreProd=vecProductos[o].getnombreProducto();
 
 }
 }
@@ -628,7 +628,7 @@ for (int o=0; o<cantidad2; o++){
 
 
     cout<<"El proveedor es  : "<<vecProveedores[o].getNombre()<<endl;
-
+     nombreProvee=vecProveedores[o].getNombre();
 
 }
 }
@@ -663,7 +663,7 @@ cout<<"El importe total es "<<Importetotal<<endl;
 cout<<"Ingresar OK=1, NO=0"<< endl;
 cin>>estado;
 
-compra= Compras (idProd, idProv, Hfecha, Importetotal, estado);
+compra= Compras (nombreProd, nombreProvee, Hfecha, Importetotal, estado);
 
 
 if (Arch.guardar(compra)){
