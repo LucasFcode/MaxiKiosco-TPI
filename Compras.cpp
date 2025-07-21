@@ -8,16 +8,14 @@ Compras::Compras() {
     strcpy(idProveedor, "");
     strcpy(idProd, "");
     importe = 0.0f;
-    _stock=0;
     activo = true;
 }
 
-Compras::Compras(std::string idProd,std::string idPROV,Fecha fecha,float Importe, int stock, bool estado){
+Compras::Compras(std::string idProd,std::string idPROV,Fecha fecha,float Importe, int estado){
     setIdProd(idProd);
     setIdProveedor(idPROV);
     setFecha(fecha);
     setImporte(Importe);
-    setstock(stock);
     setActivo(estado);
 
     }
@@ -61,13 +59,6 @@ bool Compras::setImporte(float nuevoImporte) {
     importe = nuevoImporte;
 }
 
-bool  Compras::setstock(int stock) {
-    if (stock < 0) {
-            cout << "Error: el precio no puede ser negativo..." << endl;
-            return 0;
-        }
-     _stock = stock;
-}
 bool Compras::setActivo(bool estado) {
     activo = estado;
 }
@@ -89,10 +80,6 @@ Fecha Compras::getFecha(){
 
 float Compras::getImporte() {
     return importe;
-}
-
-int Compras::getstock() {
-    return _stock;
 }
 
 bool Compras::getActivo(){

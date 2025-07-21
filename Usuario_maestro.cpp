@@ -663,7 +663,7 @@ cout<<"El importe total es "<<Importetotal<<endl;
 cout<<"Ingresar OK=1, NO=0"<< endl;
 cin>>estado;
 stock=cantidadCompra;
-compra= Compras (nombreProd, nombreProvee, Hfecha, Importetotal,stock, estado);
+compra= Compras (nombreProd, nombreProvee, Hfecha, Importetotal, estado);
 
 
 if (Arch.guardar(compra)){
