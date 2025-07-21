@@ -281,18 +281,18 @@
 
 1753115440 d:\progra2\git\otra\maxikiosco-tpi\listados.h
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\compras.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\compras.cpp
 	<cstring>
 	<iostream>
 	"Compras.h"
 
-1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\compras.h
+1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\compras.h
 	"Fecha.h"
 	<iostream>
 
-1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\fecha.h
+1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\fecha.h
 
-1753062508 source:c:\users\lauty\documents\github\maxikiosco-tpi\comprasarchivo.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\comprasarchivo.cpp
 	<iostream>
 	<cstdio>
 	"ComprasArchivo.h"
@@ -310,17 +310,17 @@
 1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\comprastotal.h
 	<string>
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\consultas.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\consultas.cpp
 	<iostream>
 	"Consultas.h"
 	"ProductosArchivo.h"
 	"ProveedorArchivo.h"
 	"ComprasArchivo.h"
 
-1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\consultas.h
+1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\consultas.h
 	"Productos.h"
 
-1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\productos.h
+1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\productos.h
 	<string>
 
 1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\productosarchivo.h
@@ -330,14 +330,14 @@
 1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\proveedorarchivo.h
 	"Proveedores.h"
 
-1753065004 c:\users\lauty\documents\github\maxikiosco-tpi\proveedores.h
+1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\proveedores.h
 	<string>
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\fecha.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\informes.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\informes.cpp
 	<iostream>
 	<cstring>
 	"informes.h"
@@ -349,7 +349,7 @@
 
 1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\informes.h
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\listados.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\listados.cpp
 	<iostream>
 	"Listados.h"
 	"Proveedores.h"
@@ -360,9 +360,9 @@
 	"Fecha.h"
 	"ProveedorArchivo.h"
 
-1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\listados.h
+1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\listados.h
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\menucompras.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\menucompras.cpp
 	<iostream>
 	"MENUcompras.h"
 	"Usuario_maestro.h"
@@ -374,7 +374,7 @@
 	"Proveedores.h"
 	"Compras.h"
 
-1753062357 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuprincipal.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"MENUProducto.h"
@@ -383,6 +383,7 @@
 	"Usuario_maestro.h"
 	"MENUproveedores.h"
 	"MENUcompras.h"
+	"Listados.h"
 
 1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\menuprincipal.h
 
@@ -396,17 +397,17 @@
 	"Usuario_maestro.h"
 	"ProductosArchivo.h"
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuproveedores.cpp
+1753067371 source:c:\users\lauty\documents\github\maxikiosco-tpi\menuproveedores.cpp
 	<iostream>
 	"MENUProveedores.h"
 	"Usuario_maestro.h"
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\productos.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\productos.cpp
 	<cstring>
 	"Productos.h"
 	<iostream>
 
-1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\productosarchivo.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\productosarchivo.cpp
 	"ProductosArchivo.h"
 	"Productos.h"
 	<iostream>
@@ -415,15 +416,16 @@
 	<iostream>
 	"ProveedorArchivo.h"
 
-1753065915 source:c:\users\lauty\documents\github\maxikiosco-tpi\proveedores.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\proveedores.cpp
 	<iostream>
+	<cstring>
 	"Proveedores.h"
 
 1753060209 source:c:\users\lauty\documents\github\maxikiosco-tpi\main.cpp
 	<iostream>
 	"MenuPrincipal.h"
 
-1753065722 source:c:\users\lauty\documents\github\maxikiosco-tpi\usuario_maestro.cpp
+1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\usuario_maestro.cpp
 	<iostream>
 	<string>
 	<cstring>
