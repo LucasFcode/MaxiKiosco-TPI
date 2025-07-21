@@ -1,28 +1,40 @@
 #include <iostream>
-#include <cstring>
 using namespace std;
 #include "Proveedores.h"
 
 Proveedores::Proveedores(){
-strcpy (_idProveedor, "");
+/*strcpy (_idProveedor, "");
 strcpy (_CUIT, "");
 strcpy (_Nombre, "");
 strcpy (_Telefono, "");
 strcpy (_email, "");
-strcpy (_direccion, "");
+strcpy (_direccion, "");*/
  _estado=true;
+
+ _idProveedor= "";
+_CUIT= "";
+_Nombre= "";
+_Telefono= "";
+_email= "";
+_direccion= "";
 
 }
 
 Proveedores::Proveedores(std::string idProveedor, std::string CUIT, std::string Nombre, std::string Telefono, std::string Email, std::string Direccion, bool estado){
-strcpy (_idProveedor, idProveedor.c_str());
+/*strcpy (_idProveedor, idProveedor.c_str());
 strcpy (_CUIT, CUIT.c_str());
 strcpy (_Nombre, Nombre.c_str());
 strcpy (_Telefono, Telefono.c_str());
 strcpy (_email, Email.c_str());
-strcpy (_direccion, Direccion.c_str());
+strcpy (_direccion, Direccion.c_str());*/
  _estado= estado;
 
+setidProveedor(idProveedor);
+ setCUIT(CUIT);
+ setNombre(Nombre);
+ setTelefono(Telefono);
+ setEmail(Email);
+ setDireccion(Direccion);
 
 }
 
@@ -61,28 +73,28 @@ bool Proveedores::setidProveedor( std::string Proveedor){
     if(Proveedor.size()>30){
             return false;
 
-       } else {strcpy (_idProveedor, Proveedor.c_str());
+       } else {_idProveedor=Proveedor;
        return true;}
     }
 
-void Proveedores::setCUIT(std::string CUIT){
-strcpy(_CUIT, CUIT.c_str());
+bool Proveedores::setCUIT(std::string CUIT){
+_CUIT=CUIT;
 }
 
-void Proveedores::setNombre(std::string Nombre){
-strcpy(_Nombre, Nombre.c_str());
+bool Proveedores::setNombre(std::string Nombre){
+_Nombre=Nombre;
 }
 
-void Proveedores::setTelefono(std::string Telefono){
-strcpy(_Telefono, Telefono.c_str());
+bool Proveedores::setTelefono(std::string Telefono){
+_Telefono=Telefono;
 }
 
-void Proveedores::setEmail(std::string Email){
-strcpy(_email, Email.c_str());
+bool Proveedores::setEmail(std::string Email){
+_email=Email;
 }
 
-void Proveedores::setDireccion(std::string Direccion){
-strcpy(_direccion, Direccion.c_str());
+bool Proveedores::setDireccion(std::string Direccion){
+_direccion=Direccion;
 }
 
 void Proveedores::setEstado(bool estado){
@@ -90,34 +102,6 @@ _estado=estado;
 }
 
 
-/*  -----------------------------------------------------------> POSIBLEMENTE BORRAR POR MANAGER
-void Proveedores::Cargar(){
-string CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str;
-int idProv;
-
-cout << "Carga de IDProveedor" << endl;
-cin >> idProv;
-setidProveedor(idProv);
-cin.ignore();
-cout << "Carga de CUIT" << endl;
-getline(cin,CUIT_str);
-setCUIT(CUIT_str.c_str());
-cout << "Carga de Nombre" << endl;
-getline(cin,Nombre_str);
-setNombre(Nombre_str.c_str());
-cout << "Carga de Telefono" << endl;
-getline(cin,Telefono_str);
-setTelefono(Telefono_str.c_str());
-cout << "Carga de Email" << endl;
-getline(cin,Email_str);
-setEmail(Email_str.c_str());
-cout << "Carga de Direccion" << endl;
-getline(cin,Direccion_str);
-setDireccion(Direccion_str.c_str());
-_estado=true;
-
-}
-*/
 
 void Proveedores::Mostrar(){
 
@@ -145,39 +129,3 @@ else{
 }
 
 
-
-void Proveedores::Opcmenu(){
-int Opcs;
-bool Salida=true;
-while(Salida==true){
-cout << "=================================" << endl;
-cout << "1- Cargar proveedor" << endl;
-cout << "2- Mostrar proveedor" << endl;
-cout << "3- Borrar proveedor" << endl;
-cout << "4- regresar al menu anterior" << endl;
-cin >> Opcs;
-cin.ignore();
-switch(Opcs){
-case 1:
-  // Cargar();
-    break;
-
-case 2:
-    Mostrar();
-    break;
-
-case 3:
-   // Eliminar();
-    break;
-
- case 4:
-    Salida=false;
-    break;
-
-    default:
-    exit(0);
-    break;
-}
-
-}
-}

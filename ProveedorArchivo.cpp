@@ -66,22 +66,7 @@ fclose(ProvArchivo);
 return Modif;
     }
 
-/*  ------> para eliminar
-bool ProveedorArchivo::Eliminar(Proveedores maxi,int pos){
-FILE *ProvArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-if(ProvArchivo==NULL){
-    cout << "no se pudo abrir el archivo para su eliminacion" << endl;
-return false;
-}
-ProveedorArchivo ProveedorAeliminar;
-fseek(ProvArchivo, sizeof(Proveedores) * pos, SEEK_SET);
-fread(&ProveedorAeliminar, sizeof(Proveedores), 1, ProvArchivo);
-ProveedorAeliminar.setregActivo(false);
-fseek(ProvArchivo, sizeof(Proveedores) * pos, SEEK_SET);
-bool eliminacionExitosa = fwrite(&ProveedorAeliminar, sizeof(Proveedores), 1, ProvArchivo) == 1;
-fclose(ProvArchivo);
-    return eliminacionExitosa;
-}*/
+
 
 void ProveedorArchivo::setregActivo(bool estado){
 _registroActivo=estado;

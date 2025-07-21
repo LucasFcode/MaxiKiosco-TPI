@@ -77,33 +77,7 @@ int ComprasArchivo::getCantidadRegistros() {
     return cant;
 }
 
-/*  ///--> revisar es lo mismo que proveedores
-int ComprasArchivo::buscarProveedor(std::string nombreProveedor){
-FILE *archivo;
- Compras compra;
- archivo= fopen (_nombreArchivo.c_str() , "rb");
- if (archivo==nullptr){
 
-    cout << "hubo un error al ingresar a buscarProveedor/ProveedorArchivo" << endl;
- }
- int pos=0;
- while (fread (&compra,sizeof (Compras), 1, archivo)==1){
-
-    if (compra.getNombre()==nombreProveedor){
-        fclose (archivo);
-        return pos;
-
-    }
-    else{
-            cout << "este Nombre NO EXISTE en el sistema" << endl;
-    return pos=-11;
-    }
-
-    pos++;
- }
- fclose (ProvArchivo);
- return -1;
-}*/
 
 
 

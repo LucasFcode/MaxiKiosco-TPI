@@ -19,7 +19,7 @@ void MenuPrincipal::mostrar(){
     MENUcompras Carga3;
     informes inf;
     Consultas con;
-    Usuario_maestro a;
+
 
 
     do {
