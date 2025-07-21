@@ -657,7 +657,7 @@ bool registro=reg.getActivo();
 
 if(registro==1){
 cout<<"**************************************************"<<endl;
-cout << "ID de Compra: " <<reg.getIdCompra() << endl;
+cout << "ID Producto: " <<reg.getIDProd() << endl;
 cout << "ID de Proveedor: " <<reg.getIdProveedor() << endl;
 cout << "Fecha de la compra: " << reg.getFecha().toString() << endl;
 cout << "Importe: " << reg.getImporte() << endl;
@@ -669,7 +669,7 @@ else {
 
 }
 
-
+/*
 void Usuario_maestro::eliminarCompra (){
 Usuario_maestro cargas;
     ComprasArchivo registro;
@@ -731,7 +731,7 @@ cout<<"Ingrese ID de la compra a modificar :"<<endl;
             Compras setter= reg.leerUno(Pos);
             cout<<"Ingrese el nuevo ID :"<<endl;
             cin >> idCompra;
-            setter.setIdCompra(idCompra);
+            setter.setIdProd(idCompra);
 
         if (reg.guardar(setter)){
             cout<<"Registro modificado correctamente..."<<endl;
@@ -836,7 +836,7 @@ system("pause");
 
 }while (Opcion != 0);
 }
-
+*/
 void Usuario_maestro::listarcompras(){
 Usuario_maestro mostrarEnLista;
  ComprasArchivo Archicom;

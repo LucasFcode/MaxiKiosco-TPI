@@ -135,7 +135,7 @@
 
 1753074019 d:\progra2\git\otra\maxikiosco-tpi\fecha.h
 
-1753074050 source:d:\progra2\git\otra\maxikiosco-tpi\comprasarchivo.cpp
+1753074138 source:d:\progra2\git\otra\maxikiosco-tpi\comprasarchivo.cpp
 	<iostream>
 	<cstdio>
 	"ComprasArchivo.h"
@@ -173,7 +173,7 @@
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\proveedorarchivo.h
 	"Proveedores.h"
 
-1752852173 d:\progra2\git\otra\maxikiosco-tpi\proveedores.h
+1753074138 d:\progra2\git\otra\maxikiosco-tpi\proveedores.h
 	<string>
 
 1753074019 source:d:\progra2\git\otra\maxikiosco-tpi\fecha.cpp
@@ -192,13 +192,13 @@
 
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\informes.h
 
-1753062267 source:d:\progra2\git\otra\maxikiosco-tpi\main.cpp
+1753074138 source:d:\progra2\git\otra\maxikiosco-tpi\main.cpp
 	<iostream>
 	"MenuPrincipal.h"
 
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\menuprincipal.h
 
-1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\menuprincipal.cpp
+1753074138 source:d:\progra2\git\otra\maxikiosco-tpi\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"MENUProducto.h"
@@ -235,16 +235,15 @@
 	"Productos.h"
 	<iostream>
 
-1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\proveedorarchivo.cpp
+1753074138 source:d:\progra2\git\otra\maxikiosco-tpi\proveedorarchivo.cpp
 	<iostream>
 	"ProveedorArchivo.h"
 
-1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\proveedores.cpp
+1753074138 source:d:\progra2\git\otra\maxikiosco-tpi\proveedores.cpp
 	<iostream>
-	<cstring>
 	"Proveedores.h"
 
-1753073810 source:d:\progra2\git\otra\maxikiosco-tpi\usuario_maestro.cpp
+1753074478 source:d:\progra2\git\otra\maxikiosco-tpi\usuario_maestro.cpp
 	<iostream>
 	<string>
 	<cstring>
@@ -257,12 +256,12 @@
 	"Compras.h"
 	"ComprasArchivo.h"
 
-1752983287 source:d:\progra2\git\otra\maxikiosco-tpi\menucompras.cpp
+1753074119 source:d:\progra2\git\otra\maxikiosco-tpi\menucompras.cpp
 	<iostream>
 	"MENUcompras.h"
 	"Usuario_maestro.h"
 
-1752852173 source:d:\progra2\git\otra\maxikiosco-tpi\menuproveedores.cpp
+1753074138 source:d:\progra2\git\otra\maxikiosco-tpi\menuproveedores.cpp
 	<iostream>
 	"MENUProveedores.h"
 	"Usuario_maestro.h"
