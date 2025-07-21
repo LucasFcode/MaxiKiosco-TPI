@@ -35,7 +35,7 @@ bool Productos::setIDProducto(std::string IDProducto) {
 }
 
 bool Productos::setnombreProducto(std::string nombre) {
-    if(nombre.size()>16){
+    if(nombre.size()>30){
             return false;
 
        } else {strcpy (_nombreProducto, nombre.c_str());
@@ -44,7 +44,7 @@ bool Productos::setnombreProducto(std::string nombre) {
    }
 
 bool Productos::settipoProducto(std::string tipo) {
-    if(tipo.size()>16){
+    if(tipo.size()>30){
             return false;
 
        } else {strcpy (_tipoProducto, tipo.c_str());

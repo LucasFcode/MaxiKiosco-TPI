@@ -1,22 +1,17 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 #include "Proveedores.h"
 
 Proveedores::Proveedores(){
-/*strcpy (_idProveedor, "");
+strcpy (_idProveedor, "");
 strcpy (_CUIT, "");
 strcpy (_Nombre, "");
 strcpy (_Telefono, "");
 strcpy (_email, "");
-strcpy (_direccion, "");*/
+strcpy (_direccion, "");
  _estado=true;
 
- _idProveedor= "";
-_CUIT= "";
-_Nombre= "";
-_Telefono= "";
-_email= "";
-_direccion= "";
 
 }
 
@@ -27,7 +22,6 @@ strcpy (_Nombre, Nombre.c_str());
 strcpy (_Telefono, Telefono.c_str());
 strcpy (_email, Email.c_str());
 strcpy (_direccion, Direccion.c_str());*/
- _estado= estado;
 
 setidProveedor(idProveedor);
  setCUIT(CUIT);
@@ -35,7 +29,7 @@ setidProveedor(idProveedor);
  setTelefono(Telefono);
  setEmail(Email);
  setDireccion(Direccion);
-
+ setEstado(estado);
 }
 
 
@@ -73,28 +67,61 @@ bool Proveedores::setidProveedor( std::string Proveedor){
     if(Proveedor.size()>30){
             return false;
 
-       } else {_idProveedor=Proveedor;
+       } else {strcpy (_idProveedor, Proveedor.c_str());
+
        return true;}
     }
 
 bool Proveedores::setCUIT(std::string CUIT){
-_CUIT=CUIT;
+    if(CUIT.size()>30){
+            return false;
+
+       } else {strcpy (_CUIT, CUIT.c_str());
+
+       return true;}
+
 }
 
 bool Proveedores::setNombre(std::string Nombre){
-_Nombre=Nombre;
+
+    if(Nombre.size()>30){
+            return false;
+
+       } else {strcpy (_Nombre, Nombre.c_str());
+
+       return true;}
+
 }
 
 bool Proveedores::setTelefono(std::string Telefono){
-_Telefono=Telefono;
+    if(Telefono.size()>30){
+            return false;
+
+       } else {strcpy (_Telefono, Telefono.c_str());
+
+       return true;}
+
 }
 
 bool Proveedores::setEmail(std::string Email){
-_email=Email;
+    if(Email.size()>30){
+            return false;
+
+       } else {strcpy (_email, Email.c_str());
+
+       return true;}
+
 }
 
 bool Proveedores::setDireccion(std::string Direccion){
-_direccion=Direccion;
+    if(Direccion.size()>30){
+            return false;
+
+       } else {strcpy (_direccion, Direccion.c_str());
+
+       return true;}
+
+
 }
 
 void Proveedores::setEstado(bool estado){

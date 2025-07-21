@@ -7,6 +7,7 @@ using namespace std;
 #include "Usuario_maestro.h"
 #include "MENUproveedores.h"
 #include "MENUcompras.h"
+#include "Listados.h"
 
 
 
@@ -17,6 +18,7 @@ void MenuPrincipal::mostrar(){
     MENUProducto cargas;
     MENUproveedores carga2;
     MENUcompras Carga3;
+    Listados listas;
     informes inf;
     Consultas con;
 
@@ -47,8 +49,7 @@ void MenuPrincipal::mostrar(){
                 Carga3.Mos();
                 break;
             case 4:
-                inf.Listardatos();
-                ;
+                listas.MENUlistados();
                 break;
             case 5:
                 con.menuconsultas();

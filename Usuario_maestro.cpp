@@ -22,7 +22,7 @@ bool caso1, caso2, caso3, caso4, caso5;
 
  cout <<"Ingrese ID Producto"<<endl;
  cin.ignore();
- getline(cin, IDProducto);
+  getline(cin, IDProducto);
  caso1=prodCarga.setIDProducto(IDProducto);
 
 cout << "Ingrese Nombre Producto"<< endl;
@@ -251,47 +251,54 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
 void Usuario_maestro::cargarProveedor(){
     Proveedores proveedor;
     ProveedorArchivo ArchivodeProveedores;
-char CUIT_str[30], Nombre_str[30], Telefono_str[30], Email_str[30],Direccion_str[30];
-char idProv_str[30];
+string CUIT_str, Nombre_str, Telefono_str, Email_str,Direccion_str, idProv_str;
 bool Estado=true;
+bool caso1, caso2, caso3, caso4, caso5, caso6;
 
 cout << "Carga de IDProveedor" << endl;
-cin >> idProv_str;
-proveedor.setidProveedor(idProv_str);
 cin.ignore();
+getline(cin, idProv_str);
+caso1=proveedor.setidProveedor(idProv_str);
 
 cout << "Carga de CUIT" << endl;
 cin >> CUIT_str;
-proveedor.setCUIT(CUIT_str);
+getline(cin, idProv_str);
+caso2=proveedor.setCUIT(CUIT_str);
 
 cout << "Carga de Nombre" << endl;
-cin >> Nombre_str;
-proveedor.setNombre(Nombre_str);
+getline(cin, Nombre_str);
+caso3=proveedor.setNombre(Nombre_str);
 
 cout << "Carga de Telefono" << endl;
-cin >> Telefono_str;
-proveedor.setTelefono(Telefono_str);
+getline(cin, Telefono_str);
+caso4=proveedor.setTelefono(Telefono_str);
 
 cout << "Carga de Email" << endl;
-cin >> Email_str;
-proveedor.setEmail(Email_str);
+getline(cin, Email_str);
+caso5=proveedor.setEmail(Email_str);
 
 cout << "Carga de Direccion" << endl;
-cin >> Direccion_str;
-proveedor.setDireccion(Direccion_str);
+getline(cin, Direccion_str);
+caso6=proveedor.setDireccion(Direccion_str);
+
 proveedor.setEstado(Estado);
 
-proveedor= Proveedores (idProv_str, CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str,Estado);
 
+if (caso1 && caso2 && caso3 && caso4 && caso5 && caso6){
 
-if (ArchivodeProveedores.Guardar(proveedor)){       /// guardo los datos en Proveedores.dat
+    if (ArchivodeProveedores.Guardar(proveedor)){
 
-    cout<< "Se guardo correctamente!" << endl;
+    cout<< "Se guardo correctamente!"<<endl;
 }
-else{
-    cout<<"Hubo un error al realizar la carga" << endl;
 
 }
+
+else {
+        cout<<"Error al ingresar datos, intenta realizar la carga nuevamente..."<<endl;
+        }
+        system ("pause");
+        system("cls");
+
 
 }
 

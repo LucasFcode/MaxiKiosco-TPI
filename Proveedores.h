@@ -5,14 +5,13 @@
 class Proveedores{
 
 private:
-    std::string _idProveedor;
-    std::string _CUIT;
-    std::string _Nombre;
-    std::string _Telefono;
-    std::string _email;
-    std::string _direccion;
+    char _idProveedor[30];
+    char _CUIT[30];
+    char _Nombre[30];
+    char _Telefono[30];
+    char _email[30];
+    char _direccion[30];
     bool _estado;
-
 
 
 
