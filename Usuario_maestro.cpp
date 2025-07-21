@@ -688,10 +688,10 @@ bool registro=reg.getActivo();
 
 if(registro==1){
 cout<<"**************************************************"<<endl;
-cout << "ID de Compra: " <<reg.getIDProd() << endl;
-cout << "ID de Proveedor: " <<reg.getIdProveedor() << endl;
-cout << "Fecha de la compra: " << reg.getFecha().toString() << endl;
-cout << "Importe: " << reg.getImporte() << endl;
+cout << "Producto : " <<reg.getIDProd() << endl;
+cout << "Proveedor : " <<reg.getIdProveedor() << endl;
+cout << "Fecha de la compra : " << reg.getFecha().toString() << endl;
+cout << "Importe $ : " << reg.getImporte() << endl;
 cout<<"**************************************************"<<endl;
 }
 else {

@@ -19,7 +19,7 @@ int Opcion;
         system("cls");
   cout<<"---------------------------------------------------"<<endl;
         cout << "      Menu Listados     "<<endl;
-        cout << "1. Busquedas de Proveedores"<<endl;
+        cout << "1. Listar productos agrupados"<<endl;
         cout << "2. Busquedas de Productos"<<endl;
         cout << "3. Busquedas de Compras"<<endl;
         cout << "0. Salir" << endl;
@@ -29,17 +29,17 @@ int Opcion;
       switch(Opcion){
    case 1:
        system("cls");
-          Menu1Proveedores();
+          listarProductosAgrupados();
     break;
 
    case 2:
        system("cls");
-       Menu2Productos();
+///       Menu2Productos();
     break;
 
    case 3:
        system("cls");
-       Menu3Compras();
+      /// Menu3Compras();
     break;
 
    case 0:
@@ -55,8 +55,61 @@ int Opcion;
 
 }
 
-///********************************************************
 
+void Listados::listarProductosAgrupados() {
+    ProductosArchivo archivo;
+    int total = archivo.cantidadTotalProductos();
+    Productos productos[100]; // suponemos que no hay m s de 100 productos
+    string tipos[20];        // suponemos hasta 20 tipos distintos
+    int cantProductos = 0;
+    int cantTipos = 0;
+
+    // Leer todos los productos y guardarlos en el arreglo
+    for (int i = 0; i < total; i++) {
+        Productos p = archivo.leer(i);
+        productos[cantProductos] = p;
+        cantProductos++;
+    }
+
+    // Buscar tipos £nicos
+    for (int i = 0; i < cantProductos; i++) {
+        string tipoActual = productos[i].gettipoProducto();
+        bool repetido = false;
+
+        for (int j = 0; j < cantTipos; j++) {
+            if (tipos[j] == tipoActual) {
+                repetido = true;
+                break;
+            }
+        }
+
+        if (!repetido) {
+            tipos[cantTipos] = tipoActual;
+            cantTipos++;
+        }
+    }
+
+    // Mostrar productos agrupados por tipo
+    cout << "\n--- Productos agrupados por tipo ---\n";
+
+    for (int i = 0; i < cantTipos; i++) {
+        cout << "Tipo: " << tipos[i] << endl;
+        cout << "--------------------------" << endl;
+
+        for (int j = 0; j < cantProductos; j++) {
+            if (productos[j].gettipoProducto() == tipos[i]) {
+                productos[j].mostrarProd();
+            }
+        }
+    }
+    system ("pause");
+        system("cls");
+}
+
+
+
+
+/*
 
 void Listados::Menu1Proveedores(){
 int Opc;
@@ -206,7 +259,8 @@ string Nombre;
 int Pos=0;
 
 cout << "ingrese Nombre del Proveedor: ";
-cin >> Nombre;
+cin.ignore();
+getline(cin, Nombre);
 
 int Totalreg= Archi.getCantidadRegistros();
 cout << endl;
@@ -365,7 +419,7 @@ return;
 }
 
 }
-}*/
+}
 
 
 void Listados::Fecha_Compras(){
@@ -663,5 +717,5 @@ Archi.leerUno(Pos[i]).mostrar();
 delete[] Importes;
 
 }
-
+*/
 

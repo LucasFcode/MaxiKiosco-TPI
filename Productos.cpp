@@ -9,17 +9,15 @@ strcpy(_IDProducto, "");
 strcpy (_nombreProducto, "");
 strcpy (_tipoProducto, "");
  _precioUnitario=0;
- _stock=0;
- _estado=true;
+  _estado=true;
 
 
 };
- Productos::Productos(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio, int stock){
+ Productos::Productos(std::string IDProducto, std::string nombreProducto, std::string tipoProducto, float precio){
 setIDProducto(IDProducto);
 setnombreProducto(nombreProducto);
 settipoProducto (tipoProducto);
 setprecioUnitario(precio);
-setstock (stock);
 
 
  };
@@ -63,14 +61,6 @@ bool Productos::setprecioUnitario(float precio) {
 
 
 
-bool Productos::setstock(int stock) {
-    if (stock < 0) {
-            cout << "Error: el precio no puede ser negativo..." << endl;
-            return 0;
-        }
-     _stock = stock;
-}
-
 void Productos::setEstado (bool estado){
 
  _estado= estado;
@@ -93,9 +83,6 @@ float Productos::getprecioUnitario() {
     return _precioUnitario;
 }
 
-int Productos::getstock() {
-    return _stock;
-}
 bool Productos::getEstado (){
 return _estado;
 }
@@ -108,7 +95,7 @@ cout << "ID del Producto: " << getIDProducto() << endl;
 cout << "Nombre del producto: " << getnombreProducto() << endl;
 cout << "Tipo de producto: " << gettipoProducto() << endl;
 cout << "Precio Unitario: " << getprecioUnitario() << endl;
-cout << "Stock: " << getstock() << endl;
+///cout << "Stock: " << getstock() << endl;
 if(getEstado()){
 cout << "-------------------------------" << endl;
 cout << "Producto habilitado en el sistema" << endl;

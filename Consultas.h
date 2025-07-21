@@ -7,8 +7,8 @@ public :
     void menuconsultas();
     void mostrarProveedoresActivos();
     void mostrarProductosActivos();
-    void mostrarProductosprecios();
+    ///void mostrarProductosprecios();
     ///void mostrarstockProductos();
-    void mostrarComprasdelmes();
+    ///void mostrarComprasdelanio();
     void mostrarComprasaunProveedor();
 };

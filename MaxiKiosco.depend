@@ -153,17 +153,17 @@
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\comprastotal.h
 	<string>
 
-1753073907 source:d:\progra2\git\otra\maxikiosco-tpi\consultas.cpp
+1753113444 source:d:\progra2\git\otra\maxikiosco-tpi\consultas.cpp
 	<iostream>
 	"Consultas.h"
 	"ProductosArchivo.h"
 	"ProveedorArchivo.h"
 	"ComprasArchivo.h"
 
-1753073907 d:\progra2\git\otra\maxikiosco-tpi\consultas.h
+1753113444 d:\progra2\git\otra\maxikiosco-tpi\consultas.h
 	"Productos.h"
 
-1753102611 d:\progra2\git\otra\maxikiosco-tpi\productos.h
+1753116894 d:\progra2\git\otra\maxikiosco-tpi\productos.h
 	<string>
 
 1752852173 d:\progra2\git\otra\maxikiosco-tpi\productosarchivo.h
@@ -226,7 +226,7 @@
 	"Usuario_maestro.h"
 	"ProductosArchivo.h"
 
-1753102611 source:d:\progra2\git\otra\maxikiosco-tpi\productos.cpp
+1753116894 source:d:\progra2\git\otra\maxikiosco-tpi\productos.cpp
 	<cstring>
 	"Productos.h"
 	<iostream>
@@ -245,7 +245,7 @@
 	<cstring>
 	"Proveedores.h"
 
-1753110611 source:d:\progra2\git\otra\maxikiosco-tpi\usuario_maestro.cpp
+1753112177 source:d:\progra2\git\otra\maxikiosco-tpi\usuario_maestro.cpp
 	<iostream>
 	<string>
 	<cstring>
@@ -268,7 +268,7 @@
 	"MENUProveedores.h"
 	"Usuario_maestro.h"
 
-1752975671 source:d:\progra2\git\otra\maxikiosco-tpi\listados.cpp
+1753115619 source:d:\progra2\git\otra\maxikiosco-tpi\listados.cpp
 	<iostream>
 	"Listados.h"
 	"Proveedores.h"
@@ -279,7 +279,7 @@
 	"Fecha.h"
 	"ProveedorArchivo.h"
 
-1752852173 d:\progra2\git\otra\maxikiosco-tpi\listados.h
+1753115440 d:\progra2\git\otra\maxikiosco-tpi\listados.h
 
 1753055277 source:c:\users\lauty\documents\github\maxikiosco-tpi\compras.cpp
 	<cstring>
