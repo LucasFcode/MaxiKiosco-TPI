@@ -18,7 +18,6 @@ void Usuario_maestro::cargarProducto (){
 
 string IDProducto, nombreProducto, tipoProducto;
 float precioUnitario;
-int stock;
 bool caso1, caso2, caso3, caso4, caso5;
 
  cout <<"Ingrese ID Producto"<<endl;
@@ -45,16 +44,8 @@ while (!(cin >> precioUnitario)) {
 caso4=prodCarga.setprecioUnitario(precioUnitario);
 
 
-cout<<"Ingrese stock"<< endl;
-while (!(cin >> stock)) {
-        cout << "Entrada no valida. Por favor ingresa un numero: "<<endl;
-        cin.clear();
-        cin.ignore();
-    }
-caso5=prodCarga.setstock(stock);
 
-
-if (caso1 && caso2 && caso3 && caso4 && caso5){
+if (caso1 && caso2 && caso3 && caso4){
 
     if (registro.Guardar(prodCarga)){
 
@@ -119,7 +110,6 @@ int Opcion;
         cout << "2. Nombre Producto"<<endl;
         cout << "3. Tipo Producto"<<endl;
         cout << "4. Precio unitario"<<endl;
-        cout << "5. Stock"<<endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opci¢n:  ";
   cin >> Opcion;
@@ -240,29 +230,6 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
     break;
 
    case 5:
-         int posicion5;
-cout<<"Ingrese ID Producto a modificar :"<<endl;
-    cin.ignore();
-    getline(cin, idProducto);
-    posicion5=registro.buscarProducto(idProducto);
-
-    if (posicion5>=0){
-            Productos setter= registro.leer(posicion5);
-            cout<<"Ingrese el nuevo Stock del producto :"<<endl;
-            cin>>stock;
-            setter.setstock(stock);
-
-        if (registro.Guardar(setter, posicion5)){
-            cout<<"Registro modificado correctamente..."<<endl;
-        }
-        else{
-            cout<<"Hubo un error al modificar el registro..."<<endl;
-        }
-    }
-    else {
-        cout<<"No existe el ID buscado..."<<endl;
-    }
-
 
     break;
 
@@ -282,58 +249,49 @@ cout<<"Ingrese ID Producto a modificar :"<<endl;
 
 
 void Usuario_maestro::cargarProveedor(){
-
     Proveedores proveedor;
     ProveedorArchivo ArchivodeProveedores;
-std::string CUIT_str, Nombre_str, Telefono_str, Email_str,Direccion_str;
-std::string idProv_str;
+char CUIT_str[30], Nombre_str[30], Telefono_str[30], Email_str[30],Direccion_str[30];
+char idProv_str[30];
 bool Estado=true;
-bool caso1, caso2, caso3, caso4, caso5,caso6;
 
-cout << "Ingrese ID del proveedor"<< endl;
+cout << "Carga de IDProveedor" << endl;
+cin >> idProv_str;
+proveedor.setidProveedor(idProv_str);
 cin.ignore();
-getline(cin, idProv_str);
-caso1=proveedor.setidProveedor(idProv_str);
 
-cout << "Ingrese CUIT del proveedor"<< endl;
-cin.ignore();
-getline(cin, CUIT_str);
-caso2=proveedor.setCUIT(CUIT_str);
+cout << "Carga de CUIT" << endl;
+cin >> CUIT_str;
+proveedor.setCUIT(CUIT_str);
 
-cout << "Ingrese Nombre"<< endl;
-getline(cin, Nombre_str);
-caso3=proveedor.setNombre(Nombre_str);
+cout << "Carga de Nombre" << endl;
+cin >> Nombre_str;
+proveedor.setNombre(Nombre_str);
 
-cout << "Ingrese el telefono"<< endl;
-getline(cin, Telefono_str);
-caso4=proveedor.setTelefono(Telefono_str);
+cout << "Carga de Telefono" << endl;
+cin >> Telefono_str;
+proveedor.setTelefono(Telefono_str);
 
-cout << "Ingrese Email"<< endl;
-getline(cin, Email_str);
-caso5=proveedor.setEmail(Email_str);
+cout << "Carga de Email" << endl;
+cin >> Email_str;
+proveedor.setEmail(Email_str);
 
-cout << "Ingrese la direccion"<< endl;
-getline(cin, Direccion_str);
-caso6=proveedor.setDireccion(Direccion_str);
+cout << "Carga de Direccion" << endl;
+cin >> Direccion_str;
+proveedor.setDireccion(Direccion_str);
+proveedor.setEstado(Estado);
 
-Estado=true;
+proveedor= Proveedores (idProv_str, CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str,Estado);
 
 
-//proveedor= Proveedores (idProv_str, CUIT_str, Nombre_str, Telefono_str, Email_str, Direccion_str,Estado);
-if (caso1 && caso2 && caso3 && caso4 && caso5 && caso6){
+if (ArchivodeProveedores.Guardar(proveedor)){       /// guardo los datos en Proveedores.dat
 
-    if (ArchivodeProveedores.Guardar(proveedor)){
-
-    cout<< "Se guardo correctamente!"<<endl;
+    cout<< "Se guardo correctamente!" << endl;
 }
+else{
+    cout<<"Hubo un error al realizar la carga" << endl;
 
 }
-
-else {
-        cout<<"Error al ingresar datos, intenta realizar la carga nuevamente..."<<endl;
-        }
-        system ("pause");
-        system("cls");
 
 }
 
@@ -614,42 +572,108 @@ cout<<"Ingrese ID del proveedor a modificar :"<<endl;
 ///****************************************************************************************************************
 void Usuario_maestro::cargarCompras(){
 
-string idCompra, idProv;
-Fecha Hfecha;
-int estado;
-float Importe;
 
+string idProd, idProv;
+Fecha Hfecha;
+int estado, cantidad1, cantidad2, cantidadCompra;
+float Importe, Importetotal;
+
+ProductosArchivo cant;
 Compras compra;
 ComprasArchivo Arch;
+ProveedorArchivo reg;
 
-cout << "Carga ID de la compra" << endl;
+cantidad1=cant.cantidadTotalProductos();
+Productos *vecProductos;
+
+vecProductos = new Productos [cantidad1];
+
+cant.leerMuchos(vecProductos, cantidad1);
+
+cout << "Carga ID del producto" << endl;
 cin.ignore();
-getline(cin,idCompra);
+getline(cin,idProd);
+
+for (int o=0; o<cantidad1; o++){
+
+        if(vecProductos[o].getIDProducto()==idProd){
+
+
+    cout<<"El producto es  : "<<vecProductos[o].getnombreProducto()<<endl;
+
+
+}
+}
+
 
 cout << "Carga ID de Proveedor" << endl;
 getline(cin,idProv);
 
+cantidad2=reg.getCantidadRegistros();
+Proveedores *vecProveedores;
+
+vecProveedores = new Proveedores [cantidad2];
+
+reg.leerMuchos(vecProveedores, cantidad2);
+for (int o=0; o<cantidad2; o++){
+
+        if(vecProveedores[o].getidProveedor()==idProv){
+
+
+    cout<<"El proveedor es  : "<<vecProveedores[o].getNombre()<<endl;
+
+
+}
+}
+
+
 cout << "Carga de Fecha" << endl;
 Hfecha.Cargar();
 
-cout << "Carga de Importe" << endl;
-cin >> Importe;
+cout << "Cargar cantidad" << endl;
+while (!(cin >> cantidadCompra)) {
+        cout << "Entrada no valida. Por favor ingresa un numero: "<<endl;
+        cin.clear();
+        cin.ignore();
+    }
+
+
+for (int o=0; o<cantidad1; o++){
+
+        if(vecProductos[o].getIDProducto()==idProd){
+
+
+    Importe= vecProductos[o].getprecioUnitario();
+
+
+}
+}
+Importetotal=Importe*cantidadCompra;
+
+cout<<"El importe total es "<<Importetotal<<endl;
+
 
 cout<<"Ingresar OK=1, NO=0"<< endl;
 cin>>estado;
 
-compra= Compras (idCompra, idProv, Hfecha, Importe, estado);
+compra= Compras (idProd, idProv, Hfecha, Importetotal, estado);
 
 
 if (Arch.guardar(compra)){
 
-    cout<< "Se guardo correctamente!";
-}
-else{
-    cout<<"Hubo un error al realizar la carga";
-
+    cout<< "Se guardo correctamente!"<<endl;
 }
 
+
+else {
+        cout<<"Error al ingresar datos, intenta realizar la carga nuevamente..."<<endl;
+        }
+        system ("pause");
+        system("cls");
+
+
+delete [] vecProductos;
+delete [] vecProveedores;
 }
 
 void Usuario_maestro::mostrarcomprasActivas(Compras reg){
@@ -657,7 +681,7 @@ bool registro=reg.getActivo();
 
 if(registro==1){
 cout<<"**************************************************"<<endl;
-cout << "ID Producto: " <<reg.getIDProd() << endl;
+cout << "ID de Compra: " <<reg.getIDProd() << endl;
 cout << "ID de Proveedor: " <<reg.getIdProveedor() << endl;
 cout << "Fecha de la compra: " << reg.getFecha().toString() << endl;
 cout << "Importe: " << reg.getImporte() << endl;
@@ -835,8 +859,8 @@ system("pause");
 }
 
 }while (Opcion != 0);
-}
-*/
+}*/
+
 void Usuario_maestro::listarcompras(){
 Usuario_maestro mostrarEnLista;
  ComprasArchivo Archicom;
@@ -860,7 +884,3 @@ mostrarEnLista.mostrarcomprasActivas(registro);
     }
 system("pause");
 }
-
-
-
-
