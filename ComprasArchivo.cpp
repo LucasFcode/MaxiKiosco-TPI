@@ -156,7 +156,7 @@ int ComprasArchivo::buscaridCompra(std::string idCompra){
  int posicion=0;
  while (fread (&Com,sizeof (Compras), 1, pFile)==1){
 
-    if (Com.getIdCompra()==idCompra){
+    if (Com.getIDProd()==idCompra){
         fclose (pFile);
         encontrado=true;
         return posicion;
@@ -220,6 +220,3 @@ fread(reg, sizeof(Compras), cantidad, pFile);
 fclose(pFile);
  return true;
 }
-
-
-

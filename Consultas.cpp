@@ -33,7 +33,7 @@ void Consultas::menuconsultas(){
 
                 break;
             case 2:
-               mostrarstockProductos();
+               ///mostrarstockProductos();
 
                 break;
             case 3:
@@ -85,7 +85,7 @@ for (int o=0; o<cantidad; o++){
 }
 delete [] vecProductos;
 }
-
+/*
 void Consultas::mostrarstockProductos(){
 int stockMenor;
 ProductosArchivo dat;
@@ -117,7 +117,7 @@ for (int o=0; o<cantidad; o++){
 
  cout<< "*************************************************"<<endl;
 delete [] vecProductos;
-}
+}*/
 
 
 
@@ -143,7 +143,7 @@ for (int o=0; o<cantidad; o++){
         if(vecCompras[o].getFecha().getMes()==mes){
 
 
-    cout<<vecCompras[o].getIdCompra()<<endl<<endl;
+    cout<<vecCompras[o].getIDProd()<<endl<<endl;
 
 
 }
@@ -156,6 +156,7 @@ delete [] vecCompras;
 void Consultas::mostrarComprasaunProveedor(){
 string prov;
 ComprasArchivo dat;
+
 int cantidad = dat.getCantidadRegistros();
 
 Compras *vecCompras;
@@ -174,10 +175,9 @@ for (int o=0; o<cantidad; o++){
 
         if(vecCompras[o].getIdProveedor()==prov){
 
-
-    cout<<vecCompras[o].getIdCompra()<<endl<<endl;
-
-    cout<<vecCompras[o].getImporte()<<endl<<endl;
+    cout<<"ID Producto  :"<<vecCompras[o].getIDProd()<<endl<<endl;
+    cout<<"Proveedor  :" <<vecCompras[o].getIdProveedor()<<endl;
+    cout<<"Importe de cada compra  :"<<vecCompras[o].getImporte()<<endl<<endl;
 
 
 }
@@ -235,4 +235,3 @@ for (int o=0; o<cantidad; o++){
 }
 delete [] vecProductos;
 }
-

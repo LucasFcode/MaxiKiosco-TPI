@@ -8,7 +8,7 @@ public :
     void mostrarProveedoresActivos();
     void mostrarProductosActivos();
     void mostrarProductosprecios();
-    void mostrarstockProductos();
+    ///void mostrarstockProductos();
     void mostrarComprasdelmes();
     void mostrarComprasaunProveedor();
 };

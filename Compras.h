@@ -5,7 +5,7 @@
 class Compras {
 private:
     char idProveedor[30];
-    char idCompra[30];
+    char idProd[30];
     Fecha _fecha;
     float importe;
     bool activo;
@@ -13,21 +13,21 @@ private:
 public:
     // Constructor por defecto
     Compras();
-    Compras(std::string IDcompra,std::string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
+    Compras(std::string idProd,std::string idPROV,Fecha fecha,float Importe, int estado);   /// para informes
 
     // Getters
      std::string getIdProveedor();
-     std::string getIdCompra();
+     std::string getIDProd();
     Fecha getFecha();
     float getImporte();
     bool getActivo();
 
     // Setters
-    void setIdProveedor( std::string id);
-    void setIdCompra( std::string id);
-    void setFecha(const Fecha& fecha);
-    void setImporte(float importe);
-    void setActivo(bool estado);
+    bool setIdProveedor( std::string id);
+    bool setIdProd( std::string id);
+    bool setFecha(const Fecha& fecha);
+    bool setImporte(float importe);
+    bool setActivo(bool estado);
 
 
     void mostrar();
