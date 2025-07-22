@@ -281,12 +281,12 @@
 
 1753115440 d:\progra2\git\otra\maxikiosco-tpi\listados.h
 
-1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\compras.cpp
+1753132370 source:c:\users\lauty\documents\github\maxikiosco-tpi\compras.cpp
 	<cstring>
 	<iostream>
 	"Compras.h"
 
-1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\compras.h
+1753132370 c:\users\lauty\documents\github\maxikiosco-tpi\compras.h
 	"Fecha.h"
 	<iostream>
 
@@ -320,7 +320,7 @@
 1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\consultas.h
 	"Productos.h"
 
-1753129814 c:\users\lauty\documents\github\maxikiosco-tpi\productos.h
+1753132370 c:\users\lauty\documents\github\maxikiosco-tpi\productos.h
 	<string>
 
 1753055277 c:\users\lauty\documents\github\maxikiosco-tpi\productosarchivo.h
@@ -402,7 +402,7 @@
 	"MENUProveedores.h"
 	"Usuario_maestro.h"
 
-1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\productos.cpp
+1753132370 source:c:\users\lauty\documents\github\maxikiosco-tpi\productos.cpp
 	<cstring>
 	"Productos.h"
 	<iostream>
@@ -425,7 +425,7 @@
 	<iostream>
 	"MenuPrincipal.h"
 
-1753129814 source:c:\users\lauty\documents\github\maxikiosco-tpi\usuario_maestro.cpp
+1753132370 source:c:\users\lauty\documents\github\maxikiosco-tpi\usuario_maestro.cpp
 	<iostream>
 	<string>
 	<cstring>
