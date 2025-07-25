@@ -104,12 +104,14 @@ return _estado;
 void Productos::mostrarProd(){
 
 if(_estado){
-
-cout << "ID del Producto: " << getIDProducto() << endl;
-cout << "Nombre del producto: " << getnombreProducto() << endl;
-cout << "Tipo de producto: " << gettipoProducto() << endl;
-cout << "Precio Unitario: " << getprecioUnitario() << endl;
-cout << "Stock: " << getstock() << endl;
+cout << endl ;
+cout << "============================================================================================" <<endl ;
+cout << "|ID del Producto: " << getIDProducto() << " | " ;
+cout << "Nombre del producto: " << getnombreProducto() << " | " ;
+cout << "Tipo de producto: " << gettipoProducto() << endl ;
+cout << "|Precio Unitario: " << getprecioUnitario() << " | " ;
+cout << "Stock: " << getstock() << " |" << endl ;
+cout << "============================================================================================" <<endl ;
 if(getEstado()){
 cout << "-------------------------------" << endl;
 cout << "Producto habilitado en el sistema" << endl;

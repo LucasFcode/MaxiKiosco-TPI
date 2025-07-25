@@ -10,6 +10,7 @@ private:
 public:
     ///Productos
     void cargarProducto ();
+    void listarProductos();
     void eliminarProducto ();
     void modificarProducto ();
 

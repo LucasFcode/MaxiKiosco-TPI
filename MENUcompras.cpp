@@ -37,6 +37,10 @@ int Opcion;
       /// Cargacompra.modificarCompra();
     break;
 
+    case 0:
+    cout << "Saliendo del menu de compras..." << endl;
+    break;
+
     default:
         cout << "Elija una opcion valida:" << endl;
 

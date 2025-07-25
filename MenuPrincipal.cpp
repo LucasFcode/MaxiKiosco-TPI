@@ -59,8 +59,10 @@ void MenuPrincipal::mostrar(){
                 ;
                 break;
             case 0:
-                cout << "Saliendo..." << endl;
+                cout<<endl;
+                cout << "Adios..." << endl;
                 break;
+
             default:
                 cout << "Elija una opcion valida:" << endl;
         }

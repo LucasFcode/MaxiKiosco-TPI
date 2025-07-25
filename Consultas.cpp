@@ -16,34 +16,48 @@ void Consultas::menuconsultas(){
     int opcion;
 
     do {
-        cout << "--- Menu Consultas ---" << endl;
-        cout << "1. Ver compras a un proveedor " << endl;
-        cout << "2. Proveedores activos " << endl;
-        cout << "3. Productos activos " << endl;
+        cout << "\n--- Menu Consultas ---" << endl;
+        cout << "1. Productos con precio menor a " << endl;
+        cout << "2. Stock Productos menores a " << endl;
+        cout << "3. Buscar compras en el mes " << endl;
+        cout << "4. Ver compras a un proveedor " << endl;
+        cout << "5. Proveedores activos " << endl;
+        cout << "6. Productos activos " << endl;
         cout << "0. Salir" << endl;
         cout << "Elija una opci¢n: ";
         cin >> opcion;
 
         switch (opcion) {
             case 1:
-               mostrarComprasaunProveedor();
+               mostrarProductosprecios();
 
                 break;
             case 2:
-               mostrarProveedoresActivos();
+               mostrarstockProductos();
 
                 break;
             case 3:
-               mostrarProductosActivos();
+                mostrarComprasdelmes();
                 break;
-
+            case 4:
+                mostrarComprasaunProveedor();
+                break;
+            case 5:
+                mostrarProveedoresActivos();
+                break;
+            case 6:
+                mostrarProductosActivos();
+                break;
+            case 0:
+                cout << "Saliendo del menu consultas..." << endl;
+                break;
             default:
                 cout << "Elija una opcion valida:" << endl;
         }
     } while (opcion != 0);
 
     }
-/*
+
 void Consultas::mostrarProductosprecios(){
 ProductosArchivo dat;
 int cantidad = dat.cantidadTotalProductos();
@@ -73,7 +87,7 @@ for (int o=0; o<cantidad; o++){
 }
 delete [] vecProductos;
 }
-/*
+
 void Consultas::mostrarstockProductos(){
 int stockMenor;
 ProductosArchivo dat;
@@ -109,8 +123,8 @@ delete [] vecProductos;
 
 
 
-void Consultas::mostrarComprasdelanio(){
-int anio;
+void Consultas::mostrarComprasdelmes(){
+int mes;
 ComprasArchivo dat;
 int cantidad = dat.getCantidadRegistros();
 
@@ -120,15 +134,15 @@ vecCompras = new Compras [cantidad];
 
 dat.leerMuchos(vecCompras, cantidad);
 
-cout<<"Ingrese numero de anio"<< endl;
+cout<<"Ingrese numero de mes"<< endl;
 
-cin >> anio;
+cin >> mes;
 
-cout<<" Compras realizadas del anio :"<< anio <<endl;
+cout<<" Compras realizadas del mes :"<< mes <<endl;
 
 for (int o=0; o<cantidad; o++){
 
-        if(vecCompras[o].getFecha().getAnio()==anio){
+        if(vecCompras[o].getFecha().getMes()==mes){
 
 
     cout<<vecCompras[o].getIDProd()<<endl<<endl;
@@ -140,11 +154,10 @@ for (int o=0; o<cantidad; o++){
  cout<< "*************************************************"<<endl;
 delete [] vecCompras;
 }
-*/
+
 void Consultas::mostrarComprasaunProveedor(){
 string prov;
 ComprasArchivo dat;
-float acum=0;
 
 int cantidad = dat.getCantidadRegistros();
 
@@ -164,16 +177,14 @@ for (int o=0; o<cantidad; o++){
 
         if(vecCompras[o].getIdProveedor()==prov){
 
-
+    cout<<"ID Producto  :"<<vecCompras[o].getIDProd()<<endl<<endl;
     cout<<"Proveedor  :" <<vecCompras[o].getIdProveedor()<<endl;
     cout<<"Importe de cada compra  :"<<vecCompras[o].getImporte()<<endl<<endl;
-     acum=vecCompras[o].getImporte()+acum;
-
-    }
 
 
 }
-cout<<"Total gastado con el proveedor :"<<acum<<endl;
+}
+
  cout<< "*************************************************"<<endl;
 delete [] vecCompras;
 }
